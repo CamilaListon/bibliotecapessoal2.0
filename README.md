@@ -1,38 +1,37 @@
-📚 BibliotecaPessoal 2.0
+📚 BibliotecaPessoal 2.0<br>
 Repositório criado como parte da apresentação do Trabalho de Conclusão de Semestre da 2ª fase do curso Técnico em Desenvolvimento de Sistemas do SENAI - SC.
 
-🔍 Sobre o Projeto
+🔍 Sobre o Projeto<br>
 BibliotecaPessoal 2.0 é um site de gerenciamento de bibliotecas particulares. A proposta é oferecer ao usuário uma forma prática e organizada de controlar sua coleção de livros, além de registrar hábitos e preferências de leitura.
 
-✅ Requisitos Funcionais
-O sistema deverá permitir que o usuário:
+✅ Requisitos Funcionais<br>
+O sistema deverá permitir que o usuário:<br>
 
-✨ Registre livros em diferentes categorias:
--Lidos
--Não lidos
--Abandonados
--Lista de desejos
--Recomendados
+✨ Registre livros em diferentes categorias:<br>
+-Lidos <br>
+-Não lidos<br>
+-Abandonados<br>
+-Lista de desejos<br>
+-Recomendados<br>
 
-✨ Visualize e gerencie informações detalhadas sobre os livros, como:
+✨ Visualize e gerencie informações detalhadas sobre os livros, como:<br>
+-Quantidade de páginas lidas<br>
+-Estimativa de custo médio gasto em livros<br>
+-Formato de leitura (digital ou física)<br>
 
--Quantidade de páginas lidas
--Estimativa de custo médio gasto em livros
--Formato de leitura (digital ou física)
+✨ Mantenha um controle centralizado da sua biblioteca pessoal, com fácil navegação entre categorias e filtros.<br>
 
-✨ Mantenha um controle centralizado da sua biblioteca pessoal, com fácil navegação entre categorias e filtros.
-
-💡 Objetivo
-Oferecer aos leitores uma ferramenta intuitiva e completa para controle de acervo e hábitos de leitura, promovendo o autoconhecimento literário e incentivando a leitura contínua.
+💡 Objetivo<br>
+Oferecer aos leitores uma ferramenta intuitiva e completa para controle de acervo e hábitos de leitura, promovendo o autoconhecimento literário e incentivando a leitura contínua.<br>
 
 🚀 Tecnologias Utilizadas
 Aqui você pode listar as tecnologias do projeto, como por exemplo:
--HTML, CSS, JavaScript
--Frameworks ou bibliotecas específicas (React, Bootstrap, etc.)
--Banco de Dados 
+-HTML, CSS, JavaScript<br>
+-Frameworks ou bibliotecas específicas (React, Bootstrap, etc.)<br>
+-Banco de Dados <br>
 
 👥 Contribuidores
-✨Camila Liston
-✨Erik Kavulack
-✨Giulia Souza da Fonseca
-✨Jacqueline Neis Mathias
+✨Camila Liston<br>
+✨Erik Kavulack<br>
+✨Giulia Souza da Fonseca<br>
+✨Jacqueline Neis Mathias<br>
