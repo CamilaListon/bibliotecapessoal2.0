@@ -24,8 +24,8 @@ O sistema deverá permitir que o usuário:<br>
 💡 Objetivo<br>
 Oferecer aos leitores uma ferramenta intuitiva e completa para controle de acervo e hábitos de leitura, promovendo o autoconhecimento literário e incentivando a leitura contínua.<br>
 
-🚀 Tecnologias Utilizadas
-Aqui você pode listar as tecnologias do projeto, como por exemplo:
+🚀 Tecnologias Utilizadas<br>
+Aqui você pode listar as tecnologias do projeto, como por exemplo:<br>
 -HTML, CSS, JavaScript<br>
 -Frameworks ou bibliotecas específicas (React, Bootstrap, etc.)<br>
 -Banco de Dados <br>
