@@ -30,11 +30,7 @@ Aqui você pode listar as tecnologias do projeto, como por exemplo:
 -Frameworks ou bibliotecas específicas (React, Bootstrap, etc.)<br>
 -Banco de Dados <br>
 
-<<<<<<< HEAD
 👥 Contribuidores:<br>
-=======
-👥 Contribuidores<br>
->>>>>>> 0221ace4adea1676047d7743d0378f9b900c32fa
 ✨Camila Liston<br>
 ✨Erik Kavulack<br>
 ✨Giulia Souza da Fonseca<br>
