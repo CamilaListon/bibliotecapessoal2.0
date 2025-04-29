@@ -31,7 +31,7 @@ Aqui você pode listar as tecnologias do projeto, como por exemplo:<br>
 -Banco de Dados <br>
 
 👥 Contribuidores:<br>
-✨Camila Liston<br>
-✨Erik Kavulack<br>
-✨Giulia Souza da Fonseca<br>
-✨Jacqueline Neis Mathias<br>
+✨ [Camila Liston](https://github.com/CAMILALISTON)  <br>
+✨ [Erik Kavulack](https://github.com/erikkavulack)  <br>
+✨ [Giulia Souza da Fonseca](https://github.com/GiuliaSouzaDaF)  <br>
+✨ [Jacqueline Neis Mathias](https://github.com/jacquelinemathias)  <br>
