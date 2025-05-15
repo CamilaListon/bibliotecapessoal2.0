@@ -12,7 +12,6 @@ O sistema deverá permitir que o usuário:<br>
 -Não lidos<br>
 -Abandonados<br>
 -Lista de desejos<br>
--Recomendados<br>
 
 ✨ Visualize e gerencie informações detalhadas sobre os livros, como:<br>
 -Quantidade de páginas lidas<br>
