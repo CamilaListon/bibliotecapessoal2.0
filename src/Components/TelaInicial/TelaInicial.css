@@ -1,0 +1,60 @@
+body{
+    background-color: #FDF0D5;
+}
+
+.grand{
+    display: flex;
+    max-width: 800px;
+}
+    .topo{
+        font-size: 75px;
+        font-family: "Sour Gummy", sans-serif;
+        color: #669BBC; text-shadow: #003049 0.04em 0.04em 0.1em
+    }
+    #telainicialB{
+        max-width: 256px;
+        height: 256px;
+    }
+
+    #telainicialA{
+        max-width: 546px;
+        height: 546px;
+    }
+
+.botoes{
+    display: flex;
+    align-items: center;
+    gap: 66px;
+}
+    .crie{
+        border: 2px solid #C1121F;
+        border-radius: 8px;
+        color: #C1121F;
+        width: 353px;
+        height: 66px;
+        font-weight: bolder;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 27px;
+        cursor: pointer;
+    }
+    .faca{
+        border: 2px solid #780000;
+        background-color: #780000;
+        border-radius: 8px;
+        color: #FDF0D5;
+        width: 353px;
+        height: 66px;
+        font-weight: bolder;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 27px;
+        cursor: pointer;
+    }
+    .ou{
+        color: #C1121F;
+        font-weight: 500;
+        font-size: 27px;
+    }
