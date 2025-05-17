@@ -31,7 +31,7 @@ function CadastroUsuario() {
 
   return (
     <div className="cadastro-container">
-      <h2 id='header-cadastro'>Cadastro de Usuário</h2>
+      <h2 id='header-cadastro'>Cadastre-se</h2>
       <form onSubmit={handleCadastro}>
         <input
           type="text"
