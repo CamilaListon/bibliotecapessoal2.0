@@ -1,13 +1,16 @@
 import { useState } from 'react'
-import './App.css'
-import TelaInicial from './Components/TelaInicial/TelaInicial'
+import TelaInicial from './components/TelaInicial/TelaInicial'
+import CadastroUsuario from './Components/CadastroUsuario/CadastroUsuario'
+import LoginUsuario from './Components/LoginUsuario/LoginUsuario'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [telaAtual, setTelaAtual] = useState('inicio')
 
   return (
     <>
-      <TelaInicial />
+      {telaAtual === 'inicio' && <TelaInicial mudarTela={setTelaAtual} />}
+      {telaAtual === 'cadastro' && <CadastroUsuario />}
+      {telaAtual === 'login' && <LoginUsuario />}
     </>
   )
 }
