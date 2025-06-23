@@ -1,0 +1,70 @@
+.cadastro-livro-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.cadastro-livro-container h1 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.cadastro-livro-container .form-livro {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+}
+
+.cadastro-livro-container .coluna {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cadastro-livro-container label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+
+.cadastro-livro-container input,
+.cadastro-livro-container textarea {
+  margin-top: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+.cadastro-livro-container input[type="number"] {
+  max-width: 120px;
+}
+
+.cadastro-livro-container .botao-container {
+  margin-top: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cadastro-livro-container button {
+  background-color: #4a90e2;
+  border: none;
+  padding: 12px 28px;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cadastro-livro-container button:hover {
+  background-color: #357abd;
+}

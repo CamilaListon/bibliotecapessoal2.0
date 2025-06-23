@@ -1,31 +1,57 @@
 import React, { useState } from 'react'
 import './LoginUsuario.css'
+import { useNavigate } from 'react-router-dom'
 
 function LoginUsuario() {
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
   const [mensagem, setMensagem] = useState('')
 
+  const navigate = useNavigate()
+
   const handleLogin = (e) => {
     e.preventDefault()
 
     const usuarios = JSON.parse(localStorage.getItem('usuarios')) || []
-
+    
     const usuarioValido = usuarios.find(
       (user) => user.email === email && user.senha === senha
     )
 
     if (usuarioValido) {
       localStorage.setItem('usuarioLogado', JSON.stringify(usuarioValido))
-      setMensagem('Login realizado com sucesso!')
+      navigate('/secoes')
     } else {
       setMensagem('E-mail ou senha inválidos.')
     }
   }
 
+  const handleEsqueciSenha = () => {
+  if (!email) {
+    setMensagem('Digite seu e-mail para recuperar a senha.')
+    return
+  }
+
+  const usuarios = JSON.parse(localStorage.getItem('usuarios')) || []
+  const usuarioEncontrado = usuarios.find((user) => user.email === email)
+
+  if (usuarioEncontrado) {
+    setMensagem(`Olá, ${usuarioEncontrado.nome}. Sua senha é: ${usuarioEncontrado.senha}`)
+  } else {
+    setMensagem('E-mail não encontrado.')
+  }
+}
+
+
   return (
     <div className="login-container">
       <h2 id='header-login'>Login</h2>
+      <p className="nao-tem-cadastro">
+        Ainda não possui cadastro?{' '}
+        <span className="link-cadastro" onClick={() => navigate('/cadastro')}>
+          Cadastre-se aqui!
+        </span>
+      </p>
       <form onSubmit={handleLogin}>
         <input
           type="email"
@@ -42,6 +68,9 @@ function LoginUsuario() {
           required
         />
         <button type="submit">Entrar</button>
+        <p className="esqueci-senha" onClick={handleEsqueciSenha}>
+          Esqueci minha senha
+        </p>
       </form>
 
       {mensagem && (

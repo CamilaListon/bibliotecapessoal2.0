@@ -5,3 +5,18 @@
 .mensagem{
     color: #780000;
 }
+
+.ja-tem-cadastro {
+  margin-top: 12px;
+  color: #333;
+}
+
+.link-login {
+  color: #004aad;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link-login:hover {
+  color: #002f7a;
+}

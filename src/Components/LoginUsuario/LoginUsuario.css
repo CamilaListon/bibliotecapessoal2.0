@@ -5,3 +5,30 @@
 #mensagem{
     color: #780000;
 }
+
+.esqueci-senha {
+  color: #004aad;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-top: 12px;
+}
+
+.esqueci-senha:hover {
+  color: #002f7a;
+}
+
+.nao-tem-cadastro {
+  margin-top: 16px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.link-cadastro {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link-cadastro:hover {
+  text-decoration: none;
+}

@@ -1,14 +1,23 @@
 import './CadastroUsuario.css'
+import { useNavigate } from 'react-router-dom'
 import React, { useState } from 'react'
 
 function CadastroUsuario() {
   const [nome, setNome] = useState('')
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
+  const [confirmarSenha, setConfirmarSenha] = useState('')
   const [mensagem, setMensagem] = useState('')
+
+  const navigate = useNavigate()
 
   const handleCadastro = (e) => {
     e.preventDefault()
+
+    if (senha !== confirmarSenha) {
+      setMensagem('As senhas não coincidem.')
+      return
+    }
 
     const usuariosExistentes = JSON.parse(localStorage.getItem('usuarios')) || []
     const emailJaCadastrado = usuariosExistentes.find((user) => user.email === email)
@@ -18,7 +27,6 @@ function CadastroUsuario() {
       return
     }
 
-    // Colocar uma função de "Este nome de usuário já existe" quando o banco de dados for implementado.
     const novoUsuario = { nome, email, senha }
     usuariosExistentes.push(novoUsuario)
     localStorage.setItem('usuarios', JSON.stringify(usuariosExistentes))
@@ -26,12 +34,19 @@ function CadastroUsuario() {
     setNome('')
     setEmail('')
     setSenha('')
+    setConfirmarSenha('')
     setMensagem('Usuário cadastrado com sucesso!')
   }
 
   return (
     <div className="cadastro-container">
       <h2 id='header-cadastro'>Cadastre-se</h2>
+      <p className="ja-tem-cadastro">
+        Já possui cadastro?{' '}
+        <span className="link-login" onClick={() => navigate('/login')}>
+          Faça seu login!
+        </span>
+      </p>
       <form onSubmit={handleCadastro}>
         <input
           type="text"
@@ -54,6 +69,13 @@ function CadastroUsuario() {
           onChange={(e) => setSenha(e.target.value)}
           required
         />
+        <input
+          type="password"
+          placeholder="Confirmar senha"
+          value={confirmarSenha}
+          onChange={(e) => setConfirmarSenha(e.target.value)}
+          required
+        />
         <button type="submit">Cadastrar</button>
       </form>
 
@@ -62,4 +84,4 @@ function CadastroUsuario() {
   )
 }
 
-export default CadastroUsuario;
+export default CadastroUsuario
