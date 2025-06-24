@@ -2,7 +2,7 @@ CREATE DATABASE biblioteca_pessoal;
 USE biblioteca_pessoal;
 
 -- Tabela: usuários
-CREATE TABLE usuarios (
+CREATE TABLE usuario (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
@@ -13,25 +13,21 @@ CREATE TABLE usuarios (
 -- Tabela: livros
 CREATE TABLE livros (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    titulo VARCHAR(200) NOT NULL,
+    nome_livro VARCHAR(200) NOT NULL,
     autor VARCHAR(100),
     editora VARCHAR(100),
-    ano_publicacao INT,
+    valor DECIMAL(8,2),
     isbn VARCHAR(20),
     genero VARCHAR(50),
-    descricao TEXT
-);
-
--- Tabela: usuários x livros
-CREATE TABLE usuarios_livros (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    usuario_id INT NOT NULL,
-    livro_id INT NOT NULL,
+    descricao TEXT,
+    tipo_leitura VARCHAR(200),
     status ENUM('lido', 'nao_lido', 'abandonado', 'lista_desejo') DEFAULT 'nao_lido',
-    data_adicionado DATETIME DEFAULT CURRENT_TIMESTAMP,
     nota INT CHECK (nota BETWEEN 1 AND 5),
-    comentario TEXT,
-
-    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE,
-    FOREIGN KEY (livro_id) REFERENCES livros(id) ON DELETE CASCADE
+    consideracoes TEXT 
 );
+
+-- INSERIR de "Este nome de usuário já existe" quando o banco de dados for implementado. 
+
+ALTER TABLE livros ADD COLUMN id_usuario INT;
+ALTER TABLE livros ADD CONSTRAINT fk_usuario FOREIGN KEY (id_usuario) REFERENCES usuario(id);
+
