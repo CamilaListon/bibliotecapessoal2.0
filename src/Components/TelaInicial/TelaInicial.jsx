@@ -6,7 +6,7 @@ function TelaInicial() {
   return (
     <div className="container">
       <div className="grand">
-        <img src="/telainicialA.png" alt="..." id="telainicialA" />
+        <img src="/principal.jpg" alt="..." id="telainicialA" />
       </div>
 
       <div className="direita">
@@ -19,13 +19,13 @@ function TelaInicial() {
           </div>
         </div>
         <div className="botoes">
-        <Link to="/login">
-          <button className="faca">FAÇA SEU LOGIN</button>
-        </Link>
-        
-        <Link to="/cadastro">
-          <button className="crie">CRIE SUA CONTA</button>
-        </Link>
+          <Link to="/login">
+            <button className="faca">FAÇA SEU LOGIN</button>
+          </Link>
+
+          <Link to="/cadastro">
+            <button className="crie">CRIE SUA CONTA</button>
+          </Link>
 
         </div>
       </div>

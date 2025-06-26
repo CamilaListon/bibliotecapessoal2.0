@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 250px;
 }
 
 body {
@@ -30,8 +31,10 @@ body {
 }
 
 #telainicialA {
-    max-width: 546px;
-    height: 546px;
+    max-width: 90%;
+    height: 100%;
+    margin: 30px 0 30px 30px;
+    border-radius: 10px;
 }
 
 #titulo {
