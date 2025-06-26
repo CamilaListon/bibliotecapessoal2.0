@@ -51,14 +51,14 @@ function LoginUsuario() {
       </div>
 
       <div className="log">
-        <h2 id='header-login'>Login</h2>
+        <h2 id='header-login'>Sua Biblioteca Pessoal</h2>
         <p className="nao-tem-cadastro">
           Ainda não possui cadastro?{' '}
           <span className="link-cadastro" onClick={() => navigate('/cadastro')}>
             Cadastre-se aqui!
           </span>
         </p>
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleLogin} >
           <input className="inp-log"
             type="email"
             placeholder="E-mail"

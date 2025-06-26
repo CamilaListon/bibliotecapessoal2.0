@@ -1,16 +1,19 @@
-#login-container {
+.login-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 20px;
 }
 
 #header-login {
-  color: #780000;
+  color: #261610;
+  font-size: 32px;
 }
 
 #mensagem {
-  color: #780000;
+  color: #261610;
 }
+
 
 .log {
   display: flex;
