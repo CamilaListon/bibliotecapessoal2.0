@@ -58,7 +58,8 @@ function LoginUsuario() {
             Cadastre-se aqui!
           </span>
         </p>
-        <form onSubmit={handleLogin} >
+        <form onSubmit={handleLogin} className='for'>
+          <label htmlFor="">E-mail</label>
           <input className="inp-log"
             type="email"
             placeholder="E-mail"
@@ -66,6 +67,7 @@ function LoginUsuario() {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
+          <label htmlFor="">Senha</label>
           <input className="inp-log"
             type="password"
             placeholder="Senha"
@@ -73,7 +75,7 @@ function LoginUsuario() {
             onChange={(e) => setSenha(e.target.value)}
             required
           />
-          <button type="submit">Entrar</button>
+          <button type="submit">Login</button>
           <p className="esqueci-senha" onClick={handleEsqueciSenha}>
             Esqueci minha senha
           </p>

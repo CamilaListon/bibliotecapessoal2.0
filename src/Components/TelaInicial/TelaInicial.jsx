@@ -19,13 +19,14 @@ function TelaInicial() {
           </div>
         </div>
         <div className="botoes">
+        <Link to="/login">
+          <button className="faca">FAÇA SEU LOGIN</button>
+        </Link>
+        
         <Link to="/cadastro">
           <button className="crie">CRIE SUA CONTA</button>
         </Link>
 
-        <Link to="/login">
-          <button className="faca">FAÇA SEU LOGIN</button>
-        </Link>
         </div>
       </div>
     </div>

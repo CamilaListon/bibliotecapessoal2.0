@@ -1,3 +1,33 @@
+.cadastro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #261610;
+  gap: 20px;
+}
+
+.for-cad {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+}
+
+input {
+  height: 63px;
+  width: 470px;
+  border-radius: 10px;
+  background-color: #C3ACA0;
+  border: none;
+}
+
+.cad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 #header-cadastro {
   color: #780000;
 }

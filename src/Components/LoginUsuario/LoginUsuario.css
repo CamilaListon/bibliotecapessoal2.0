@@ -3,10 +3,10 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+  color: #261610;
 }
 
 #header-login {
-  color: #261610;
   font-size: 32px;
 }
 
@@ -14,11 +14,23 @@
   color: #261610;
 }
 
+.for{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
 
 .log {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 25px;
+}
+
+button{
+  height: 63px;
+  width: 470px;
+  margin-top: 25px;
 }
 
 .inp-log {
@@ -30,14 +42,12 @@
   box-shadow: 2px 3px 7px 000.1;
   display: flex;
   flex-direction: column;
-
 }
 
 .esqueci-senha {
-  color: #004aad;
+  color: #CA996D;
   cursor: pointer;
   text-decoration: underline;
-  margin-top: 12px;
 }
 
 .esqueci-senha:hover {
@@ -45,13 +55,12 @@
 }
 
 .nao-tem-cadastro {
-  margin-top: 16px;
   font-size: 14px;
   text-align: center;
 }
 
 .link-cadastro {
-  color: #007bff;
+  color: #CA996D;
   cursor: pointer;
   text-decoration: underline;
 }
