@@ -45,39 +45,46 @@ function LoginUsuario() {
 
   return (
     <div className="login-container">
-      <h2 id='header-login'>Login</h2>
-      <p className="nao-tem-cadastro">
-        Ainda não possui cadastro?{' '}
-        <span className="link-cadastro" onClick={() => navigate('/cadastro')}>
-          Cadastre-se aqui!
-        </span>
-      </p>
-      <form onSubmit={handleLogin}>
-        <input
-          type="email"
-          placeholder="E-mail"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Senha"
-          value={senha}
-          onChange={(e) => setSenha(e.target.value)}
-          required
-        />
-        <button type="submit">Entrar</button>
-        <p className="esqueci-senha" onClick={handleEsqueciSenha}>
-          Esqueci minha senha
-        </p>
-      </form>
 
-      {mensagem && (
-        <p id='mensagem' className={mensagem.includes('sucesso') ? 'mensagem-sucesso' : 'mensagem-erro'}>
-          {mensagem}
+      <div className="esqer">
+        <h1>image</h1>
+      </div>
+
+      <div className="log">
+        <h2 id='header-login'>Login</h2>
+        <p className="nao-tem-cadastro">
+          Ainda não possui cadastro?{' '}
+          <span className="link-cadastro" onClick={() => navigate('/cadastro')}>
+            Cadastre-se aqui!
+          </span>
         </p>
-      )}
+        <form onSubmit={handleLogin}>
+          <input className="inp-log"
+            type="email"
+            placeholder="E-mail"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input className="inp-log"
+            type="password"
+            placeholder="Senha"
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
+            required
+          />
+          <button type="submit">Entrar</button>
+          <p className="esqueci-senha" onClick={handleEsqueciSenha}>
+            Esqueci minha senha
+          </p>
+        </form>
+
+        {mensagem && (
+          <p id='mensagem' className={mensagem.includes('sucesso') ? 'mensagem-sucesso' : 'mensagem-erro'}>
+            {mensagem}
+          </p>
+        )}
+      </div>
     </div>
   )
 }

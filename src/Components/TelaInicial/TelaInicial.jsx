@@ -7,17 +7,18 @@ function TelaInicial() {
     <div className="container">
       <div className="grand">
         <img src="/telainicialA.png" alt="..." id="telainicialA" />
+      </div>
+
+      <div className="direita">
         <div className="topo">
-          <label>Sua Biblioteca Pessoal</label>
+          <label id="titulo">Sua Biblioteca Pessoal</label>
           <div>
             <label htmlFor="" id="textinho">Sua Biblioteca Pessoal é uma maneira simples,
               rápida e organizada de registrar suas leituras. Com ele, você acompanha seus livros,
               avalia suas experiências e mantém sua jornada literária sempre atualizada.</label>
           </div>
         </div>
-      </div>
-
-      <div className="botoes">
+        <div className="botoes">
         <Link to="/cadastro">
           <button className="crie">CRIE SUA CONTA</button>
         </Link>
@@ -25,6 +26,7 @@ function TelaInicial() {
         <Link to="/login">
           <button className="faca">FAÇA SEU LOGIN</button>
         </Link>
+        </div>
       </div>
     </div>
   )

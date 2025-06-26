@@ -6,7 +6,6 @@
   align-items: flex-start;
   padding-top: 40px;
   box-sizing: border-box;
-  background-color: #f5f5f5;
 }
 
 .grid-secoes {
@@ -41,7 +40,6 @@
 
 .botao-acessar {
   padding: 10px 20px;
-  background-color: #004aad;
   color: white;
   border: none;
   border-radius: 8px;

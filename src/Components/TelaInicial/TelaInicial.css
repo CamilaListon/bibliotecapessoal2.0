@@ -1,5 +1,14 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 body {
     background-color: #D9CCC5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .grand {
@@ -9,8 +18,10 @@ body {
 
 .topo {
     font-size: 32px;
-    font-family: "Sour Gummy", sans-serif;
     color: #261610;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
 }
 
 #telainicialB {
@@ -23,9 +34,27 @@ body {
     height: 546px;
 }
 
+#titulo {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
 #textinho {
+    display: flex;
+    text-align: center;
     font-size: 16px;
     color: #261610;
+    width: 476px;
+    height: 96px;
+
+}
+
+.direita {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 60px;
 }
 
 .botoes {
@@ -33,7 +62,7 @@ body {
     align-items: center;
     flex-direction: column;
     gap: 20px;
-
+    
 }
 
 .crie {
@@ -53,7 +82,6 @@ body {
 
 .faca {
     border: 2px solid #402718;
-    background-color: #402718;
     border-radius: 8px;
     color: #D9CCC5;
     font-weight: bolder;
@@ -64,10 +92,4 @@ body {
     align-items: center;
     font-size: 27px;
     cursor: pointer;
-}
-
-.ou {
-    color: #402718;
-    font-weight: 500;
-    font-size: 27px;
 }
