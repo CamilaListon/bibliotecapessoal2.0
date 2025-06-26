@@ -17,35 +17,35 @@ function App() {
         <Route path="/cadastro" element={<CadastroUsuario />} />
         <Route path="/login" element={<LoginUsuario />} />
         <Route
-        path="/secoes"
-        element={
-          <RotaProtegida>
-            <SuasSecoes />
-          </RotaProtegida>}/>
-      <Route
-        path="/cadastrolivro"
-        element={
-          <RotaProtegida>
-            <CadastroLivro/>
-          </RotaProtegida>}/>
-      <Route
-        path="/listalivros"
-        element={
-          <RotaProtegida>
-            <ListaLivros />
-          </RotaProtegida>}/>
+          path="/secoes"
+          element={
+            <RotaProtegida>
+              <SuasSecoes />
+            </RotaProtegida>} />
+        <Route
+          path="/cadastrolivro"
+          element={
+            <RotaProtegida>
+              <CadastroLivro />
+            </RotaProtegida>} />
+        <Route
+          path="/listalivros"
+          element={
+            <RotaProtegida>
+              <ListaLivros />
+            </RotaProtegida>} />
         <Route
           path="/listadesejos"
           element={
             <RotaProtegida>
               <ListaDesejos />
-            </RotaProtegida>}/>
+            </RotaProtegida>} />
         <Route
-            path="/dashboard"
-            element={
-              <RotaProtegida>
-                <Dashboard />
-              </RotaProtegida>}/>
+          path="/dashboard"
+          element={
+            <RotaProtegida>
+              <Dashboard />
+            </RotaProtegida>} />
 
       </Routes>
     </BrowserRouter>

@@ -13,7 +13,7 @@ function LoginUsuario() {
     e.preventDefault()
 
     const usuarios = JSON.parse(localStorage.getItem('usuarios')) || []
-    
+
     const usuarioValido = usuarios.find(
       (user) => user.email === email && user.senha === senha
     )
@@ -27,20 +27,20 @@ function LoginUsuario() {
   }
 
   const handleEsqueciSenha = () => {
-  if (!email) {
-    setMensagem('Digite seu e-mail para recuperar a senha.')
-    return
-  }
+    if (!email) {
+      setMensagem('Digite seu e-mail para recuperar a senha.')
+      return
+    }
 
-  const usuarios = JSON.parse(localStorage.getItem('usuarios')) || []
-  const usuarioEncontrado = usuarios.find((user) => user.email === email)
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || []
+    const usuarioEncontrado = usuarios.find((user) => user.email === email)
 
-  if (usuarioEncontrado) {
-    setMensagem(`Olá, ${usuarioEncontrado.nome}. Sua senha é: ${usuarioEncontrado.senha}`)
-  } else {
-    setMensagem('E-mail não encontrado.')
+    if (usuarioEncontrado) {
+      setMensagem(`Olá, ${usuarioEncontrado.nome}. Sua senha é: ${usuarioEncontrado.senha}`)
+    } else {
+      setMensagem('E-mail não encontrado.')
+    }
   }
-}
 
 
   return (

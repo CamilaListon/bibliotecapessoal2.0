@@ -29,30 +29,30 @@ function CadastroLivro() {
 
   const logout = () => {
     localStorage.removeItem('usuarioLogado')
-  navigate('/')
+    navigate('/')
   }
 
 
   const handleSubmit = (e) => {
-  e.preventDefault()
+    e.preventDefault()
 
-  const livros = JSON.parse(localStorage.getItem('livros')) || []
+    const livros = JSON.parse(localStorage.getItem('livros')) || []
 
-  const novoLivro = { ...formData }
+    const novoLivro = { ...formData }
 
-  livros.push(novoLivro)
+    livros.push(novoLivro)
 
-  localStorage.setItem('livros', JSON.stringify(livros))
+    localStorage.setItem('livros', JSON.stringify(livros))
 
-  navigate('/listalivros')
-}
+    navigate('/listalivros')
+  }
 
 
   return (
     <div className="cadastro-livro-container">
-        <div className="topo-sair">
-            <button className="botao-sair" onClick={logout}>Sair</button>
-        </div>
+      <div className="topo-sair">
+        <button className="botao-sair" onClick={logout}>Sair</button>
+      </div>
       <h1>Cadastro de Livro</h1>
       <form className="form-livro" onSubmit={handleSubmit}>
         <div className="coluna">
@@ -116,19 +116,19 @@ function CadastroLivro() {
         </div>
 
         <div className="coluna">
-            <label>
+          <label>
             Tipo de Leitura
             <select
-                name="tipoLeitura"
-                value={formData.tipoLeitura}
-                onChange={handleChange}
-                required
+              name="tipoLeitura"
+              value={formData.tipoLeitura}
+              onChange={handleChange}
+              required
             >
-                <option value="">Selecione...</option>
-                <option value="Físico">Físico</option>
-                <option value="Digital">Digital</option>
+              <option value="">Selecione...</option>
+              <option value="Físico">Físico</option>
+              <option value="Digital">Digital</option>
             </select>
-            </label>
+          </label>
           <label>
             Valor
             <input
@@ -144,18 +144,18 @@ function CadastroLivro() {
           <label>
             Status
             <select
-                name="status"
-                value={formData.status}
-                onChange={handleChange}
-                required
+              name="status"
+              value={formData.status}
+              onChange={handleChange}
+              required
             >
-                <option value="">Selecione</option>
-                <option value="Lido">Lido</option>
-                <option value="Não Lido">Não Lido</option>
-                <option value="Abandonado">Abandonado</option>
-                <option value="Lista de Desejos">Lista de Desejos</option>
+              <option value="">Selecione</option>
+              <option value="Lido">Lido</option>
+              <option value="Não Lido">Não Lido</option>
+              <option value="Abandonado">Abandonado</option>
+              <option value="Lista de Desejos">Lista de Desejos</option>
             </select>
-            </label>
+          </label>
 
           <label>
             Nota
@@ -183,7 +183,7 @@ function CadastroLivro() {
         </div>
 
         <div className="botao-voltar">
-            <button type="button" onClick={voltar}>VOLTAR</button>
+          <button type="button" onClick={voltar}>VOLTAR</button>
         </div>
 
         <div className="botao-cadastrar">

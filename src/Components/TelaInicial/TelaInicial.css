@@ -1,61 +1,73 @@
-body{
-    background-color: #FDF0D5;
+body {
+    background-color: #D9CCC5;
 }
 
-.grand{
+.grand {
     display: flex;
     max-width: 800px;
 }
-    .topo{
-        font-size: 75px;
-        font-family: "Sour Gummy", sans-serif;
-        color: #669BBC; text-shadow: #003049 0.04em 0.04em 0.1em
-    }
-    #telainicialB{
-        max-width: 256px;
-        height: 256px;
-    }
 
-    #telainicialA{
-        max-width: 546px;
-        height: 546px;
-    }
+.topo {
+    font-size: 32px;
+    font-family: "Sour Gummy", sans-serif;
+    color: #261610;
+}
 
-.botoes{
+#telainicialB {
+    max-width: 256px;
+    height: 256px;
+}
+
+#telainicialA {
+    max-width: 546px;
+    height: 546px;
+}
+
+#textinho {
+    font-size: 16px;
+    color: #261610;
+}
+
+.botoes {
     display: flex;
     align-items: center;
-    gap: 66px;
+    flex-direction: column;
+    gap: 20px;
+
 }
-    .crie{
-        border: 2px solid #C1121F;
-        background-color: #FDF0D5;
-        border-radius: 8px;
-        color: #C1121F;
-        width: 353px;
-        height: 66px;
-        font-weight: bolder;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 27px;
-        cursor: pointer;
-    }
-    .faca{
-        border: 2px solid #780000;
-        background-color: #780000;
-        border-radius: 8px;
-        color: #FDF0D5;
-        width: 353px;
-        height: 66px;
-        font-weight: bolder;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 27px;
-        cursor: pointer;
-    }
-    .ou{
-        color: #C1121F;
-        font-weight: 500;
-        font-size: 27px;
-    }
+
+.crie {
+    border: 2px solid #402718;
+    background-color: #D9CCC5;
+    border-radius: 8px;
+    color: #402718;
+    font-weight: bolder;
+    width: 470px;
+    height: 63px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+.faca {
+    border: 2px solid #402718;
+    background-color: #402718;
+    border-radius: 8px;
+    color: #D9CCC5;
+    font-weight: bolder;
+    width: 470px;
+    height: 63px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+.ou {
+    color: #402718;
+    font-weight: 500;
+    font-size: 27px;
+}
