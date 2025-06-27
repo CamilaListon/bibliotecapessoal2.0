@@ -1,7 +1,4 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #D9CCC5;
@@ -11,65 +8,90 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: #535bf2;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+@media (max-width: 1023px) {
+  body {
+    height: 100%;
+  }
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #402718;
+  font-size: 16px;
+  font-weight: bolder;
   cursor: pointer;
   transition: border-color 0.25s;
+  border: 1px solid transparent;
 }
 
-button:hover {
-  border-color: #646cff;
+.button-primary {
+  padding: 20px;
+  background-color: #402718;
+  color: #D9CCC5;
+  border-radius: 10px;
 }
 
-button:focus,
-button:focus-visible {
+.button-primary:hover {
+  background-color: #311e12;
+}
+
+.button-primary:focus,
+.button-primary:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+label {
+  color: #261610;
+  font-weight: bolder;
+}
+
+input {
+  background-color: #C3ACA0;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 16px;
+  color: #8B6047;
+  border: 1px solid #402718;
+}
+
+input::placeholder {
+  color: #8B6047;
+}
+
+.input-form {
+  border: none;
+  box-shadow: 2px 3px 7px #0000001d;
+}
+
+.input-outline {
+  border: 1px solid #402718;
+}
+
+.group-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 24px;
   }
 
-  a:hover {
-    color: #747bff;
+  input, button, .button-primary {
+    padding: 13px;
+    font-size: 14px;
   }
 
-  button {
-    background-color: #943a3a;
+  label {
+    font-size: 14px;
   }
 }

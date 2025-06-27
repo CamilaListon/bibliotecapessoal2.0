@@ -1,70 +1,123 @@
-.login-container {
+.container-login {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+}
+
+.coluna-esquerda {
+  width: 50vw;
+  height: 90vh;
+  background: url("principal.jpg");
+  background-position: center center;
+  border-radius: 30px;
+  margin: 1% 0 1% 2%;
+  background-size: cover;
+}
+
+.coluna-direita {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #D9CCC5;
+  border-radius: 30px;
+  width: 50vw;
+  height: 90vh;
+}
+
+.titulo {
+  font-weight: bolder;
+  margin-top: 12%;
+}
+
+.descricao-login {
+  margin: 18px 0 5% 0;
+  color: #A27A6B;
+}
+
+.titulo, .texto-cadastro {
   color: #261610;
 }
 
-#header-login {
-  font-size: 32px;
+.texto-cadastro {
+  text-align: center;
+  margin: 25% 0 0 0;
+}
+
+.link-cadastro {
+  color: #261610;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: 4px;
+}
+
+.link-cadastro:hover {
+  color: #8B6047;
 }
 
 #mensagem {
   color: #261610;
 }
 
-.for{
+.formulario-login {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-}
-
-.log {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
-}
-
-button{
-  height: 63px;
-  width: 470px;
-  margin-top: 25px;
-}
-
-.inp-log {
-  height: 63px;
-  width: 470px;
-  border-radius: 10px;
-  background-color: #C3ACA0;
-  border: none;
-  box-shadow: 2px 3px 7px 000.1;
-  display: flex;
-  flex-direction: column;
+  gap: 20px;
 }
 
 .esqueci-senha {
-  color: #CA996D;
+  color: #8B6047;
   cursor: pointer;
   text-decoration: underline;
 }
 
 .esqueci-senha:hover {
-  color: #002f7a;
+  color: #261610;
 }
 
-.nao-tem-cadastro {
-  font-size: 14px;
-  text-align: center;
+.button-primary {
+  margin-top: 8%;
 }
 
-.link-cadastro {
-  color: #CA996D;
-  cursor: pointer;
-  text-decoration: underline;
+/* Responsividade */
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .container-login {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .coluna-esquerda {
+    border-radius: 0;
+    width: 100vw;
+    z-index: 0;
+    margin: 0;
+  }
+
+  .coluna-direita {
+    position: absolute;
+    justify-content: flex-start;
+    margin-bottom: -60%;
+    width: 100vw !important;
+    z-index: 1;
+  }
+
+  .esqueci-senha, .texto-cadastro, .link-cadastro {
+    font-size: 14px;
+  }
 }
 
-.link-cadastro:hover {
-  text-decoration: none;
+/* Celular */
+@media (max-width: 767px) {
+  .descricao-login {
+    font-size: 14px;
+  }
+
+  .texto-cadastro {
+    margin: 0 !important;
+  }
+  .button-primary {
+    margin-top: 5% !important;
+  }
 }

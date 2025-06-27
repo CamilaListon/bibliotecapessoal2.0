@@ -3,45 +3,74 @@
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
   padding-top: 40px;
   box-sizing: border-box;
+  flex-direction: column;
+  color: #261610;
+}
+
+.fulano-grid {
+  display: flex;
+  align-self: center;
+  justify-content: center;
   flex-direction: column;
 }
 
 .grid-secoes {
   display: flex;
+  align-self: center;
+  justify-content: center;
   gap: 24px;
   max-width: 700px;
-  flex-wrap: wrap;
-  justify-content: center;
+}
+
+.fulano {
+  display: flex;
+
 }
 
 .painel {
-  background-color: white;
   padding: 30px;
-  border-radius: 16px;
+  border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  flex: 1 1 280px;
-  max-width: 280px;
+  width: 316px;
+  height: 400px;
   text-align: center;
   box-sizing: border-box;
   transition: transform 0.2s ease;
+
+}
+
+#image-livro {
+  background-image: url("livros.jpg");
+  background-size: cover;
+}
+
+#image-lista-desejo {
+  background-image: url("lista-de-desejos.jpg");
+  background-size: cover;
+}
+
+#image-estatistica {
+  background-image: url("estatisticas.jpg");
+  background-size: cover;
 }
 
 .painel:hover {
   transform: scale(1.03);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .painel h2 {
   margin-bottom: 20px;
   font-size: 22px;
-  color: #222;
+  color: #D9CCC5;
+  font-size: 24px;
 }
+
 
 .botao-acessar {
   padding: 10px 20px;
-  color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -50,6 +79,32 @@
   transition: background-color 0.3s ease;
 }
 
-.botao-acessar:hover {
-  background-color: #00357d;
+.painel {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.painel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(38, 22, 16, 0.32);
+  /* começa transparente */
+  transition: background-color 0.3s ease;
+  z-index: 1;
+}
+
+.painel:hover::after {
+  background-color: rgba(38, 22, 16, 0.82);
+  /* efeito translúcido ao passar o mouse */
+}
+
+/* Para o texto ficar visível por cima */
+.painel h2 {
+  position: relative;
+  z-index: 2;
 }

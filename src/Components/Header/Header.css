@@ -1,0 +1,33 @@
+.header-superior {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+#botao-voltar {
+    border: 2px solid #402718;
+    border-radius: 10px;
+    padding: 10px 22px 14px 30px;
+    color: #402718;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+}
+
+#botao-saida {
+    border: 2px solid #402718;
+    border-radius: 200px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.superior {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

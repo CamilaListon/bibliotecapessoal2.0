@@ -1,6 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import './SuasSecoes.css'
+import Header from '../Header/Header'
+
 
 function SuasSecoes() {
   const navigate = useNavigate()
@@ -12,38 +14,33 @@ function SuasSecoes() {
 
   return (
     <div className="secoes-container">
-      <div className="topo-sair">
-        <button className="botao-sair" onClick={logout}>Sair</button>
+
+      <div>
+        <Header />
       </div>
-
-      <h1>Suas Seções</h1>
-
-      <div className="grid-secoes">
-        <div className="painel" style={{ backgroundColor: '#d0f0c0' }}>
-          <h2>LIVROS</h2>
-          <button className="botao-acessar" onClick={() => navigate('/listalivros')}>
-            ACESSAR
-          </button>
+      <div className="fulano-grid">
+        <div className="fulano">
+          <h1>Olá, Fulano!</h1>
         </div>
+        <div className="grid-secoes">
+          <div className="painel" id="image-livro" onClick={() => navigate('/listalivros')}>
+            <h2>Livros</h2>
 
-        <div className="painel" style={{ backgroundColor: '#d0e1f9' }}>
-          <h2>LISTA DE DESEJOS</h2>
-          <button className="botao-acessar" onClick={() => navigate('/listadesejos')}>
-            ACESSAR
-          </button>
-        </div>
+          </div>
 
-        <div className="painel" style={{ backgroundColor: '#fcebbd' }}>
-          <h2>DASHBOARD</h2>
-          <button className="botao-acessar" onClick={() => navigate('/dashboard')}>
-            ACESSAR
-          </button>
+          <div className="painel" id="image-lista-desejo" onClick={() => navigate('/listadesejos')}>
+            <h2>Lista de Desejos</h2>
+
+          </div>
+
+          <div className="painel" id="image-estatistica" onClick={() => navigate('/dashboard')}>
+            <h2>Estatísticas</h2>
+          </div>
         </div>
       </div>
-
-      <button className="botao-adicionar" onClick={() => navigate('/cadastrolivro')}>
+      {/* <button className="botao-adicionar" onClick={() => navigate('/cadastrolivro')}>
         + Adicionar novo livro
-      </button>
+      </button> */}
     </div>
   )
 }

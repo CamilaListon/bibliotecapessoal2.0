@@ -2,23 +2,17 @@
   padding: 2rem;
   max-width: 1000px;
   margin: 0 auto;
-  color: black;
+  color: #261610;
+  display: flex;
+  flex-direction: column;
 }
 
-.topo-sair {
-  text-align: right;
-  margin-bottom: 1rem;
+.container-max {
+  display: flex;
+  flex-direction: column;
 }
 
-.botao-sair {
-  padding: 8px 16px;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-h1 {
+h3 {
   text-align: center;
   margin-bottom: 2rem;
 }
@@ -30,26 +24,17 @@ h1 {
 }
 
 .card {
-  background-color: #f7f7f7;
+  background-color: #C3ACA0;
+  border: 1px solid #261610;
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.card h2 {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  color: #333;
-}
-
-.card p,
-.card ul,
-.card ol {
-  margin: 0.5rem 0;
-  font-size: 1rem;
-}
-
-.card ul,
-.card ol {
-  padding-left: 1.2rem;
+#card-total-livros {
+  background-color: #C3ACA0;
+  border: 1px solid #261610;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Dashboard.css'
 import GraficoLivros from './GraficoLivros'
+import Header from '../Header/Header'
 import { useNavigate } from 'react-router-dom'
 
 function Dashboard() {
@@ -53,60 +54,59 @@ function Dashboard() {
   }
 
   return (
-    <div className="dashboard-container">
-      <div className="topo-dashboard">
-        <button className="botao-voltar" onClick={voltar}>Voltar</button>
-        <button className="botao-sair" onClick={logout}>Sair</button>
-      </div>
+    <div className="container-max">
+      <Header />
+      <div className="dashboard-container">
 
-      <h1>Dashboard</h1>
+        <h3>Dashboard</h3>
 
-      <div className="dashboard-grid">
-        {/* Segmento 1 */}
-        <div className="card">
-          <h2>Total de Livros</h2>
-          <p><strong>{totalLivros}</strong> livros cadastrados</p>
-          <ul>
-            <li>📘 Lidos: {lidos.length}</li>
-            <li>📕 Não Lidos: {naoLidos.length}</li>
-            <li>📙 Abandonados: {abandonados.length}</li>
-          </ul>
-        </div>
+        <div className="dashboard-grid">
+          {/* Segmento 1 */}
+          <div id="card-total-livros" className="card">
+            <h3>Livros Registrados</h3>
+            <p><strong>{totalLivros}</strong> </p>
+            <ul>
+              <p>📘 Lidos: {lidos.length}</p>
+              <p>📕 Não Lidos: {naoLidos.length}</p>
+              <p>📙 Abandonados: {abandonados.length}</p>
+            </ul>
+          </div>
 
-        {/* Segmento 2 */}
-        <div className="card">
-          <h2>Total de Páginas Lidas</h2>
-          <p><strong>{totalPaginas}</strong> páginas</p>
-        </div>
+          {/* Segmento 2 */}
+          <div className="card">
+            <h2>Total de Páginas Lidas</h2>
+            <p><strong>{totalPaginas}</strong> páginas</p>
+          </div>
 
-        {/* Segmento 3 */}
-        <div className="card">
-          <h2>Físico vs Digital (Lidos)</h2>
-          <GraficoLivros livrosFisicos={fisicosLidos} livrosDigitais={digitaisLidos} />
-        </div>
+          {/* Segmento 3 */}
+          <div className="card">
+            <h2>Físico vs Digital (Lidos)</h2>
+            <GraficoLivros livrosFisicos={fisicosLidos} livrosDigitais={digitaisLidos} />
+          </div>
 
-        {/* Segmento 4 */}
-        <div className="card">
-          <h2>Total Gasto</h2>
-          <p><strong>R${totalGasto.toFixed(2)}</strong></p>
-        </div>
+          {/* Segmento 4 */}
+          <div className="card">
+            <h2>Total Gasto</h2>
+            <p><strong>R${totalGasto.toFixed(2)}</strong></p>
+          </div>
 
-        {/* Segmento 5 */}
-        <div className="card">
-          <h2>Top 3 Gêneros</h2>
-          <ol>
-            {topGeneros.map(([genero, qtd]) => (
-              <li key={genero}>
-                {genero.charAt(0).toUpperCase() + genero.slice(1)} — {qtd}
-              </li>
-            ))}
-          </ol>
-        </div>
+          {/* Segmento 5 */}
+          <div className="card">
+            <h2>Top 3 Gêneros</h2>
+            <ol>
+              {topGeneros.map(([genero, qtd]) => (
+                <li key={genero}>
+                  {genero.charAt(0).toUpperCase() + genero.slice(1)} — {qtd}
+                </li>
+              ))}
+            </ol>
+          </div>
 
-        {/* Segmento 6 */}
-        <div className="card">
-          <h2>Lista de Desejos</h2>
-          <p><strong>{desejos.length}</strong> livros na lista</p>
+          {/* Segmento 6 */}
+          <div className="card">
+            <h2>Lista de Desejos</h2>
+            <p><strong>{desejos.length}</strong> livros na lista</p>
+          </div>
         </div>
       </div>
     </div>

@@ -44,40 +44,47 @@ function LoginUsuario() {
 
 
   return (
-    <div className="login-container">
+    <div className="container-login">
+      <div className="coluna-esquerda"></div>
 
-      <div className="esqer">
-        <h1>image</h1>
-      </div>
-
-      <div className="log">
-        <h2 id='header-login'>Sua Biblioteca Pessoal</h2>
-        <p className="nao-tem-cadastro">
-          Ainda não possui cadastro?{' '}
-          <span className="link-cadastro" onClick={() => navigate('/cadastro')}>
-            Cadastre-se aqui!
-          </span>
+      <div className="coluna-direita">
+        <h1 className='titulo'>Sua Biblioteca Pessoal</h1>
+        <p className='descricao-login'>
+          Entre para continuar
         </p>
-        <form onSubmit={handleLogin} className='for'>
-          <label htmlFor="">E-mail</label>
-          <input className="inp-log"
-            type="email"
-            placeholder="E-mail"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <label htmlFor="">Senha</label>
-          <input className="inp-log"
-            type="password"
-            placeholder="Senha"
-            value={senha}
-            onChange={(e) => setSenha(e.target.value)}
-            required
-          />
-          <button type="submit">Login</button>
-          <p className="esqueci-senha" onClick={handleEsqueciSenha}>
-            Esqueci minha senha
+
+        <form onSubmit={handleLogin} className='formulario-login'>
+          <div className="group-input">
+            <label htmlFor="">E-mail</label>
+            <input
+              className='input-form'
+              type="email"
+              placeholder="E-mail"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              />
+          </div>
+          <div className="group-input">
+            <label htmlFor="">Senha</label>
+            <input
+              className='input-form'
+              type="password"
+              placeholder="Senha"
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+              required
+            />
+            <a className="esqueci-senha" onClick={handleEsqueciSenha}>
+              Esqueci minha senha
+            </a>
+          </div>
+          <button className='button-primary' type="submit">Login</button>
+          <p className="texto-cadastro">
+            Ainda não possui cadastro?
+            <a className="link-cadastro" onClick={() => navigate('/cadastro')}>
+              Cadastre-se aqui!
+            </a>
           </p>
         </form>
 
