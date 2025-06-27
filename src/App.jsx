@@ -8,7 +8,7 @@ import ListaLivros from './Components/ListaLivros/ListaLivros'
 import ListaDesejos from './Components/ListaDesejos/ListaDesejos'
 import Dashboard from './Components/Dashboard/Dashboard'
 import RotaProtegida from './Components/RotaProtegida/RotaProtegida'
-import Header from './Components/Header/Header'
+
 
 function App() {
   return (
@@ -47,13 +47,7 @@ function App() {
             <RotaProtegida>
               <Dashboard />
             </RotaProtegida>} />
-        <Route
-          path="/header"
-          element={
-            <RotaProtegida>
-              <Header />
-            </RotaProtegida>} />
-
+        
       </Routes>
     </BrowserRouter>
   )

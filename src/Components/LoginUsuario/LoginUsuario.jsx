@@ -45,10 +45,10 @@ function LoginUsuario() {
 
   return (
     <div className="container-login">
-      <div className="coluna-esquerda"></div>
+      <div className="coluna-esquerda-login"></div>
 
-      <div className="coluna-direita">
-        <h1 className='titulo'>Sua Biblioteca Pessoal</h1>
+      <div className="coluna-direita-login">
+        <h1 className='titulo-login'>Sua Biblioteca Pessoal</h1>
         <p className='descricao-login'>
           Entre para continuar
         </p>

@@ -42,99 +42,105 @@ function ListaLivros() {
     setAbertos((prev) => ({ ...prev, [index]: !prev[index] }))
   }
 
-  const voltar = () => navigate('/secoes')
-
-  const logout = () => {
-    localStorage.removeItem('usuarioLogado')
-    navigate('/')
-  }
-
   const irParaCadastro = () => {
     navigate('/cadastrolivro')
   }
 
   return (
-    <div className="lista-livros-container">
-      <div className="topo-sair">
-        <button className="botao-sair" onClick={logout}>Sair</button>
-      </div>
+    <>
+      <div className="container-livros">
+        <h1 className='titulo-livros'>Lista de desejos</h1>
 
-      <h1>Lista de Livros</h1>
-
-      <input
-        type="text"
-        placeholder="Pesquisar por nome, autor, gênero, editora ou ISBN..."
-        value={pesquisa}
-        onChange={(e) => setPesquisa(e.target.value)}
-        className="barra-pesquisa"
-      />
-
-      <div className="filtros">
-        {['Todos', 'Lido', 'Não Lido', 'Abandonado'].map((opcao) => (
-          <button
-            key={opcao}
-            className={`filtro-btn ${filtro === opcao ? 'ativo' : ''}`}
-            onClick={() => {
-              setFiltro(opcao)
-              setPaginaAtual(1) // reinicia na primeira página ao trocar o filtro
-            }}
-          >
-            {opcao}
-          </button>
-        ))}
-      </div>
-
-      {livrosFiltrados.length === 0 ? (
-        <p className="sem-livros">Nenhum livro encontrado para o filtro: {filtro}</p>
-      ) : (
-        livrosPaginados.map((livro, index) => (
-          <div className="livro-painel" key={indiceInicio + index}>
-            <button className="toggle-btn" onClick={() => togglePainel(indiceInicio + index)}>
-              <span>{livro.nome || 'Livro sem título'}</span>
-              <span>{abertos[indiceInicio + index] ? '▲' : '▼'}</span>
-            </button>
-            {abertos[indiceInicio + index] && (
-              <div className="livro-detalhes">
-                <p><strong>ISBN:</strong> {livro.isbn}</p>
-                <p><strong>Gênero:</strong> {livro.genero}</p>
-                <p><strong>Autor:</strong> {livro.autor}</p>
-                <p><strong>Editora:</strong> {livro.editora}</p>
-                <p><strong>Tipo de Leitura:</strong> {livro.tipoLeitura}</p>
-                <p><strong>Valor:</strong> {livro.valor}</p>
-                <p><strong>Status:</strong> {livro.status}</p>
-                <p><strong>Nota:</strong> {livro.nota}</p>
-                <p><strong>Comentário:</strong> {livro.comentario}</p>
-              </div>
-            )}
+        <section className="section-livros">
+          <div className="group-input">
+            <label htmlFor="">Pesquise por um livro</label>
+            <input
+              type="text"
+              placeholder="Pesquisar por nome, autor, gênero, editora ou ISBN..."
+              value={pesquisa}
+              onChange={(e) => setPesquisa(e.target.value)}
+            />
           </div>
-        ))
-      )}
 
-      {totalPaginas > 1 && (
-        <div className="paginacao">
-          <button
-            onClick={() => setPaginaAtual((prev) => Math.max(prev - 1, 1))}
-            disabled={paginaAtual === 1}
-          >
-            Anterior
-          </button>
+          <div className="filtros-livros">
+            <div className="filtro-wrapper-livros">
+              <div
+                className="pill-livros"
+                style={{
+                  transform: `translateX(${['Todos', 'Lido', 'Não Lido', 'Abandonado'].indexOf(filtro) * 100}%)`,
+                }}
+              />
+              {['Todos', 'Lido', 'Não Lido', 'Abandonado'].map((opcao) => (
+                <button
+                  key={opcao}
+                  className={`filtro-btn-livros ${filtro === opcao ? 'ativo-livros' : ''}`}
+                  onClick={() => {
+                    setFiltro(opcao);
+                    setPaginaAtual(1);
+                  }}
+                >
+                  {opcao}
+                </button>
+              ))}
+            </div>
+          </div>
 
-          <span>Página {paginaAtual} de {totalPaginas}</span>
 
-          <button
-            onClick={() => setPaginaAtual((prev) => Math.min(prev + 1, totalPaginas))}
-            disabled={paginaAtual === totalPaginas}
-          >
-            Próxima
-          </button>
-        </div>
-      )}
+          {livrosFiltrados.length === 0 ? (
+            <p className="sem-livros-livros">Nenhum livro encontrado para o filtro: {filtro}</p>
+          ) : (
+            livrosPaginados.map((livro, index) => (
+              <div className="livro-livros" key={indiceInicio + index}>
+                <button className="toggle-btn-livros" onClick={() => togglePainel(indiceInicio + index)}>
+                  <span>{livro.nome || 'Livro sem título'}</span>
+                  <span className='icon-livro'>{abertos[indiceInicio + index] ? 
+                    <img src="arrow-up.svg" alt="Seta" /> : 
+                    <img src="arrow-down.svg" alt="Seta" />}</span>
+                </button>
+                {abertos[indiceInicio + index] && (
+                  <div className="livro-detalhes-livros">
+                    <p><strong>ISBN:</strong> {livro.isbn}</p>
+                    <p><strong>Gênero:</strong> {livro.genero}</p>
+                    <p><strong>Autor:</strong> {livro.autor}</p>
+                    <p><strong>Editora:</strong> {livro.editora}</p>
+                    <p><strong>Tipo de Leitura:</strong> {livro.tipoLeitura}</p>
+                    <p><strong>Valor:</strong> {livro.valor}</p>
+                    <p><strong>Status:</strong> {livro.status}</p>
+                    <p><strong>Nota:</strong> {livro.nota}</p>
+                    <p><strong>Comentário:</strong> {livro.comentario}</p>
+                  </div>
+                )}
+              </div>
+            ))
+          )}
 
-      <div className="botoes-inferiores">
-        <button className="botao-voltar" onClick={voltar}>Voltar</button>
-        <button className="botao-adicionar" onClick={irParaCadastro}>+ Adicionar Livro</button>
+          <button className="button-primary" onClick={irParaCadastro}>Adicionar Livro</button>
+        </section>
+
+        {totalPaginas > 1 && (
+          <div className="paginacao-livros">
+            <button
+              onClick={() => setPaginaAtual((prev) => Math.max(prev - 1, 1))}
+              disabled={paginaAtual === 1}
+              className='botao-anterior-livros'
+            >
+              Anterior
+            </button>
+
+            <span className='total-paginacao-livros'>Página {paginaAtual} de {totalPaginas}</span>
+
+            <button
+              onClick={() => setPaginaAtual((prev) => Math.min(prev + 1, totalPaginas))}
+              disabled={paginaAtual === totalPaginas}
+              className='botao-proxima-livros'
+            >
+              Próxima
+            </button>
+          </div>
+        )}
+
       </div>
-    </div>
+    </>
   )
 }
 

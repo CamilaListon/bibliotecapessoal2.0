@@ -1,4 +1,5 @@
 import React from 'react'
+import './GraficoLivros.css'
 import { Doughnut } from 'react-chartjs-2'
 import { Chart as ChartJS, ArcElement, Tooltip } from 'chart.js'
 
@@ -42,7 +43,7 @@ function GraficoLivros({ livrosFisicos, livrosDigitais }) {
   }
 
   return (
-    <div style={{ width: '100%', height: '250px' }}>
+    <div className='grafico'>
       <Doughnut data={data} options={options} />
     </div>
   )

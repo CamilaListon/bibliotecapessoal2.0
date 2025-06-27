@@ -41,9 +41,9 @@ function CadastroUsuario() {
 
   return (
     <div className="container-cadastro">
-      <div className="coluna-esquerda"></div>
+      <div className="coluna-esquerda-cadastro"></div>
 
-      <div className="coluna-direita">
+      <div className="coluna-direita-cadastro">
         <h1 className='titulo-cadastro'>Cadastre-se</h1>
         <p className='descricao-cadastro'>
           Cadastre-se para continuar

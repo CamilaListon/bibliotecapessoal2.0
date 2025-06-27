@@ -19,7 +19,8 @@ function Dashboard() {
   const abandonados = livros.filter(l => l.status?.toLowerCase() === 'abandonado')
   const desejos = livros.filter(l => l.status?.toLowerCase() === 'lista de desejos')
 
-  const totalPaginas = livros.reduce((total, livro) => {
+  // Somar apenas páginas dos livros lidos
+  const totalPaginas = lidos.reduce((total, livro) => {
     const paginas = parseInt(livro.paginas)
     return total + (isNaN(paginas) ? 0 : paginas)
   }, 0)
@@ -58,54 +59,106 @@ function Dashboard() {
       <Header />
       <div className="dashboard-container">
 
-        <h3>Dashboard</h3>
+        <h3>Estatísticas</h3>
 
         <div className="dashboard-grid">
+
           {/* Segmento 1 */}
-          <div id="card-total-livros" className="card">
-            <h3>Livros Registrados</h3>
-            <p><strong>{totalLivros}</strong> </p>
-            <ul>
-              <p>📘 Lidos: {lidos.length}</p>
-              <p>📕 Não Lidos: {naoLidos.length}</p>
-              <p>📙 Abandonados: {abandonados.length}</p>
-            </ul>
+          <div className="card-total-livros">
+            <div className='direcao-icon'>
+              <span className='circulo'>
+                <img className="icons" src="/livros-registrados.svg" alt="" />
+              </span>
+              <div>
+                <p>Livros Registrados</p>
+                <div className='numeros-informativos'>{totalLivros}</div>
+              </div>
+            </div>
+
+            <div className='direcao-icon' id="borda-lidos">
+              <span className='circulo'>
+                <img className="icons" src="/lidos.svg" alt="" />
+              </span>
+              <div>
+                <p>Lidos</p>
+                <div className='numeros-informativos'>{lidos.length}</div>
+              </div>
+            </div>
+
+            <div className='direcao-icon' id="borda-nao-lidos">
+              <span className='circulo'>
+                <img className="icons" src="nao-lidos.svg" alt="" />
+              </span>
+              <div>
+                <p>Não Lidos</p>
+                <div className='numeros-informativos'>{naoLidos.length}</div>
+              </div>
+            </div>
+
+            <div className='direcao-icon'>
+              <span className='circulo'>
+                <img className="icons" src="/abandonados.svg" alt="" />
+              </span>
+              <div>
+                <p>Abandonados</p>
+                <div className='numeros-informativos'>{abandonados.length}</div>
+              </div>
+            </div>
           </div>
 
-          {/* Segmento 2 */}
-          <div className="card">
-            <h2>Total de Páginas Lidas</h2>
-            <p><strong>{totalPaginas}</strong> páginas</p>
+          <div className="segunda-linha">
+            {/* Segmento 2 */}
+            <div className="card linha-dois">
+              <span className='sem-circulo'>
+                <img src="/pagina-lidas.svg" alt="" />
+              </span>
+              <div className='separar-linha'>
+                <p className='numeros-informativos'><strong>{totalPaginas}</strong></p>
+                <p>Total de Páginas Lidas</p>
+              </div>
+            </div>
+
+            {/* Segmento 4 */}
+            <div className="card linha-dois">
+              <span className='sem-circulo'>
+                <img src="/lista-desejos.svg" alt="" />
+              </span>
+              <div className='separar-linha'>
+                <p className='numeros-informativos'><strong>{desejos.length}</strong></p>
+                <p>Lista de Desejos</p>
+              </div>
+            </div>
+
+            {/* Segmento 3 */}
+            <div className="card-grafico">
+              <p>Porcentagem de tipo de leitura (Lidos)</p>
+              <GraficoLivros livrosFisicos={fisicosLidos} livrosDigitais={digitaisLidos} />
+            </div>
           </div>
 
-          {/* Segmento 3 */}
-          <div className="card">
-            <h2>Físico vs Digital (Lidos)</h2>
-            <GraficoLivros livrosFisicos={fisicosLidos} livrosDigitais={digitaisLidos} />
-          </div>
+          <div className="terceira-linha">
+            {/* Segmento 6 */}
+            <div className="card linha-dois valores">
+              <span className='sem-circulo'>
+                <img src="/total-gasto.svg" alt="" />
+              </span>
+              <div className='separar-linha'>
+                <p className='numeros-informativos'>R${totalGasto.toFixed(2)}</p>
+                <p>Total Gasto</p>
+              </div>
+            </div>
 
-          {/* Segmento 4 */}
-          <div className="card">
-            <h2>Total Gasto</h2>
-            <p><strong>R${totalGasto.toFixed(2)}</strong></p>
-          </div>
-
-          {/* Segmento 5 */}
-          <div className="card">
-            <h2>Top 3 Gêneros</h2>
-            <ol>
-              {topGeneros.map(([genero, qtd]) => (
-                <li key={genero}>
-                  {genero.charAt(0).toUpperCase() + genero.slice(1)} — {qtd}
-                </li>
-              ))}
-            </ol>
-          </div>
-
-          {/* Segmento 6 */}
-          <div className="card">
-            <h2>Lista de Desejos</h2>
-            <p><strong>{desejos.length}</strong> livros na lista</p>
+            {/* Segmento 5 */}
+            <div className="top-generos">
+              <p>Top 3 Gêneros</p>
+              <ol>
+                {topGeneros.map(([genero, qtd]) => (
+                  <li key={genero}>
+                    {genero.charAt(0).toUpperCase() + genero.slice(1)} — {qtd}
+                  </li>
+                ))}
+              </ol>
+            </div>
           </div>
         </div>
       </div>
