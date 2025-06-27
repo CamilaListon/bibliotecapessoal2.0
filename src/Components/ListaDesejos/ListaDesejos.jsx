@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './ListaDesejos.css'
+import Header from '../Header/Header'
 
 function ListaDesejos() {
   const [livros, setLivros] = useState([])
@@ -45,6 +46,7 @@ function ListaDesejos() {
 
   return (
     <div className="container-desejos">
+      <Header />
       <h1 className='titulo-desejos'>Lista de Desejos</h1>
 
       <section className="section-livros">
@@ -65,8 +67,8 @@ function ListaDesejos() {
             <div className="livro-desejos" key={index}>
               <button className="toggle-btn-desejos" onClick={() => togglePainel(index)}>
                 <span>{livro.nome || 'Livro sem título'}</span>
-                <span className='icon-livro'>{abertos[index] ? 
-                  <img src="arrow-up.svg" alt="Seta" /> : 
+                <span className='icon-livro'>{abertos[index] ?
+                  <img src="arrow-up.svg" alt="Seta" /> :
                   <img src="arrow-down.svg" alt="Seta" />}</span>
               </button>
               {abertos[index] && (

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './ListaLivros.css'
+import Header from '../Header/Header'
 
 function ListaLivros() {
   const [livros, setLivros] = useState([])
@@ -32,7 +33,6 @@ function ListaLivros() {
     return statusOk && contemTermo
   })
 
-  // Paginação
   const indiceInicio = (paginaAtual - 1) * livrosPorPagina
   const indiceFim = indiceInicio + livrosPorPagina
   const livrosPaginados = livrosFiltrados.slice(indiceInicio, indiceFim)
@@ -49,6 +49,7 @@ function ListaLivros() {
   return (
     <>
       <div className="container-livros">
+        <Header />
         <h1 className='titulo-livros'>Lista de desejos</h1>
 
         <section className="section-livros">
@@ -93,8 +94,8 @@ function ListaLivros() {
               <div className="livro-livros" key={indiceInicio + index}>
                 <button className="toggle-btn-livros" onClick={() => togglePainel(indiceInicio + index)}>
                   <span>{livro.nome || 'Livro sem título'}</span>
-                  <span className='icon-livro'>{abertos[indiceInicio + index] ? 
-                    <img src="arrow-up.svg" alt="Seta" /> : 
+                  <span className='icon-livro'>{abertos[indiceInicio + index] ?
+                    <img src="arrow-up.svg" alt="Seta" /> :
                     <img src="arrow-down.svg" alt="Seta" />}</span>
                 </button>
                 {abertos[indiceInicio + index] && (
