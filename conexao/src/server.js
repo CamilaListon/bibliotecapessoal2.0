@@ -4,13 +4,14 @@ const mysql = require('mysql2/promise');
 
 const app = express();
 const pool = mysql.createPool({
-    host: 'localhost',
+    host: 'switchyard.proxy.rlwy.net',
     user: 'root',      // Altere para o nome do seu user no MySQL
-    password: 'senai',    // Altere para a senha correta
-    database: 'biblioteca_pessoal',
+    password: 'SpeGdWEEAniIDWHxUuLVqnmYsodTgqew',    // Altere para a senha correta
+    database: 'railway',
     waitForConnections: true,
     connectionLimit: 10,
-    queueLimit: 0
+    queueLimit: 0,
+    port : 55784
 });
 
 app.use(cors());
