@@ -54,6 +54,23 @@ button {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.button-outline {
+  padding: 20px;
+  background-color: #D9CCC5;
+  color: #402718;
+  border-radius: 10px;
+  border: 1px solid #402718;
+}
+
+.button-outline:hover {
+  background-color: #ab978c;
+}
+
+.button-outline:focus,
+.button-outline:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
 label {
   color: #402718;
   font-weight: bolder;

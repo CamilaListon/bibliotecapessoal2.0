@@ -2,11 +2,9 @@ import React, { useEffect, useState } from 'react'
 import './Dashboard.css'
 import GraficoLivros from './GraficoLivros'
 import Header from '../Header/Header'
-import { useNavigate } from 'react-router-dom'
 
 function Dashboard() {
   const [livros, setLivros] = useState([])
-  const navigate = useNavigate()
 
   useEffect(() => {
     const dados = JSON.parse(localStorage.getItem('livros')) || []
@@ -44,15 +42,6 @@ function Dashboard() {
   const topGeneros = Object.entries(contagemGeneros)
     .sort((a, b) => b[1] - a[1])
     .slice(0, 3)
-
-  const logout = () => {
-    localStorage.removeItem('usuarioLogado')
-    navigate('/')
-  }
-
-  const voltar = () => {
-    navigate('/secoes')
-  }
 
   return (
     <div className="container-max">
@@ -150,14 +139,38 @@ function Dashboard() {
 
             {/* Segmento 5 */}
             <div className="top-generos">
-              <p>Top 3 Gêneros</p>
-              <ol>
-                {topGeneros.map(([genero, qtd]) => (
-                  <li key={genero}>
-                    {genero.charAt(0).toUpperCase() + genero.slice(1)} — {qtd}
-                  </li>
-                ))}
-              </ol>
+              <p className='subtitulo-generos'>Top 3 Gêneros</p>
+              <div className='lugares'>
+                {topGeneros.length >= 2 && (
+                  <div className='lugar'>
+                    <img className='medalha' src="medalha-de-prata.svg" alt="medalha de prata" />
+                    <div className='podio segundo'>
+                      {topGeneros[1][0].charAt(0).toUpperCase() + topGeneros[1][0].slice(1)}
+                      <span>{topGeneros[1][1]}</span>
+                    </div>
+                  </div>
+                )}
+
+                {topGeneros.length >= 1 && (
+                  <div className='lugar'>
+                    <img className='medalha' src="medalha-de-ouro.svg" alt="medalha de ouro" />
+                    <div className='podio primeiro'>
+                      {topGeneros[0][0].charAt(0).toUpperCase() + topGeneros[0][0].slice(1)}
+                      <span>{topGeneros[0][1]}</span>
+                    </div>
+                  </div>
+                )}
+
+                {topGeneros.length >= 3 && (
+                  <div className='lugar'>
+                    <img className='medalha' src="medalha-de-bronze.svg" alt="medalha de bronze" />
+                    <div className='podio terceiro'>
+                      {topGeneros[2][0].charAt(0).toUpperCase() + topGeneros[2][0].slice(1)}
+                      <span>{topGeneros[2][1]}</span>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>

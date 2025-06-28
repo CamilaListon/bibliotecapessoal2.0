@@ -10,6 +10,11 @@ function ListaLivros() {
   const [pesquisa, setPesquisa] = useState('')
   const [paginaAtual, setPaginaAtual] = useState(1)
   const livrosPorPagina = 5
+  const [livroEditando, setLivroEditando] = useState(null)
+  const [mostrarModalEdicao, setMostrarModalEdicao] = useState(false)
+  const [livroParaExcluir, setLivroParaExcluir] = useState(null)
+  const [mostrarConfirmacaoExclusao, setMostrarConfirmacaoExclusao] = useState(false)
+  const [mensagemSucesso, setMensagemSucesso] = useState('')
 
   const navigate = useNavigate()
 
@@ -46,11 +51,41 @@ function ListaLivros() {
     navigate('/cadastrolivro')
   }
 
+  const excluirLivroConfirmado = () => {
+    const novaLista = livros.filter(l => l.isbn !== livroParaExcluir.isbn)
+    setLivros(novaLista)
+    localStorage.setItem('livros', JSON.stringify(novaLista))
+    setLivroParaExcluir(null)
+    setMostrarConfirmacaoExclusao(false)
+    setMensagemSucesso('Livro excluído com sucesso!')
+    setTimeout(() => setMensagemSucesso(''), 3000)
+  }
+
+  const abrirEdicao = (livro) => {
+    setLivroEditando({ ...livro })
+    setMostrarModalEdicao(true)
+  }
+
+  const salvarEdicao = (e) => {
+    e.preventDefault()
+
+    const novaLista = livros.map((livro) =>
+      livro.isbn === livroEditando.isbn ? livroEditando : livro
+    )
+
+    setLivros(novaLista)
+    localStorage.setItem('livros', JSON.stringify(novaLista))
+    setMostrarModalEdicao(false)
+    setMensagemSucesso('Livro editado com sucesso!')
+    setTimeout(() => setMensagemSucesso(''), 3000)
+  }
+
+
   return (
     <>
       <div className="container-livros">
         <Header />
-        <h1 className='titulo-livros'>Lista de desejos</h1>
+        <h1 className='titulo-livros'>Livros</h1>
 
         <section className="section-livros">
           <div className="group-input">
@@ -109,6 +144,17 @@ function ListaLivros() {
                     <p><strong>Status:</strong> {livro.status}</p>
                     <p><strong>Nota:</strong> {livro.nota}</p>
                     <p><strong>Comentário:</strong> {livro.comentario}</p>
+                    <div className='opcoes-livro'>
+                      <button className='botao-acao' onClick={() => abrirEdicao(livro)}>
+                        <img src="editar.svg" alt="Editar livro" />
+                      </button>
+                      <button className='botao-acao' onClick={() => {
+                          setLivroParaExcluir(livro)
+                          setMostrarConfirmacaoExclusao(true)
+                        }}>
+                        <img src="excluir.svg" alt="Excluir livro" />
+                      </button>
+                    </div>
                   </div>
                 )}
               </div>
@@ -116,6 +162,82 @@ function ListaLivros() {
           )}
 
           <button className="button-primary" onClick={irParaCadastro}>Adicionar Livro</button>
+
+          {mostrarModalEdicao && livroEditando && (
+            <div className="modal-edicao">
+              <div className="conteudo-modal">
+                <h2 className='titulo-modal'>Editar Livro</h2>
+                <form onSubmit={salvarEdicao}>
+                  <div className="group-input">
+                    <label>Status</label>
+                    <select
+                      name="status"
+                      value={livroEditando.status}
+                      onChange={(e) => setLivroEditando({ ...livroEditando, status: e.target.value })}
+                      required
+                    >
+                      <option value="">Selecione</option>
+                      <option value="Lido">Lido</option>
+                      <option value="Não Lido">Não Lido</option>
+                      <option value="Abandonado">Abandonado</option>
+                      <option value="Lista de Desejos">Lista de Desejos</option>
+                    </select>
+                  </div>
+                  <div className="group-input">
+                    <label>Nota</label>
+                    <input
+                      type="number"
+                      min="0"
+                      max="10"
+                      value={livroEditando.nota}
+                      onChange={(e) => setLivroEditando({ ...livroEditando, nota: e.target.value })}
+                    />
+                  </div>
+
+                  <div className="group-input">
+                    <label>Comentário</label>
+                    <textarea
+                      name="comentario"
+                      value={livroEditando.comentario}
+                      onChange={(e) => setLivroEditando({ ...livroEditando, comentario: e.target.value })}
+                      rows="3"
+                      placeholder="O que você achou do livro?"
+                    />
+                  </div>
+
+                  <div className="botoes-modal">
+                    <button className='button-primary' type="submit">Salvar</button>
+                    <button className='button-outline' type="button" onClick={() => setMostrarModalEdicao(false)}>Cancelar</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          )}
+
+          {mensagemSucesso && (
+            <div className="modal-confirmacao">
+              <div className="mensagem-sucesso">
+                <div className='conteudo-modal'>
+                  <img src="check.svg" alt="Ícone de confirmação" />
+                  <span className='titulo-modal'>{mensagemSucesso}</span>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {mostrarConfirmacaoExclusao && (
+            <div className="modal-confirmacao">
+              <div className="conteudo-modal">
+                <h3 className='titulo-modal'>Tem certeza que deseja excluir este livro?</h3>
+                <p className='titulo-livro-modal'><strong>{livroParaExcluir?.nome}</strong></p>
+                <div className="botoes-modal">
+                  <button className='button-primary' onClick={excluirLivroConfirmado}>Sim, excluir</button>
+                  <button className='button-outline' onClick={() => setMostrarConfirmacaoExclusao(false)}>Cancelar</button>
+                </div>
+              </div>
+            </div>
+          )}
+
         </section>
 
         {totalPaginas > 1 && (
