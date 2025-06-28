@@ -165,7 +165,8 @@
     font-size: 10px;
   }
 
-  .paginacao-livros, .paginacao-livros button {
+  .paginacao-livros,
+  .paginacao-livros button {
     font-size: 12px;
   }
 
@@ -182,4 +183,3 @@
     padding: 14px 20px;
   }
 }
-
