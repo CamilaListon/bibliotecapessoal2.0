@@ -1,5 +1,6 @@
 import express from 'express'
-import conexao from '../infra/conexao.js'
+const conexao = require('./conexao/conexao.js');
+
 
 const app = express()
 
@@ -30,3 +31,4 @@ app.post('/usuario', (req, res) => {
     })
 })
 
+export default app
