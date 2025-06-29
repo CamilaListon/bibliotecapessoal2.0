@@ -1,24 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './SuasSecoes.css'
 import Header from '../Header/Header'
 
 function SuasSecoes() {
   const navigate = useNavigate()
+  const [usuario, setUsuario] = useState(null)
 
-  const logout = () => {
-    localStorage.removeItem('usuarioLogado')
-    navigate('/')
-  }
+  useEffect(() => {
+    const usuarioSalvo = localStorage.getItem('usuarioLogado')
+    if (usuarioSalvo) {
+      setUsuario(JSON.parse(usuarioSalvo))
+    }
+  }, [])
 
   return (
-    <div className="secoes-container">
-      <Header semBotaoVoltar />
+    <>
+    <Header semBotaoVoltar />
 
-      <div className="fulano-grid">
-        <div className="fulano">
-          <h1>Olá, Fulano!</h1>
-        </div>
+    <div className="secoes-container">
+      <div className="nome-grid">
+        <h1 className="nome">Olá, {usuario?.nome || 'usuário'}!</h1>
+
         <div className="grid-secoes">
           <div className="painel" id="image-livro" onClick={() => navigate('/listalivros')}>
             <h2>Livros</h2>
@@ -37,6 +40,7 @@ function SuasSecoes() {
         </div>
       </div>
     </div>
+    </>
   )
 }
 

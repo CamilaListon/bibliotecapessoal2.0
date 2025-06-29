@@ -13,7 +13,7 @@ function GraficoLivros({ livrosFisicos, livrosDigitais }) {
     datasets: [
       {
         data: [livrosFisicos, livrosDigitais],
-        backgroundColor: ['#4caf50', '#2196f3'],
+        backgroundColor: ['#402718', '#8C5B30'],
         borderWidth: 0,
         circumference: 180,
         rotation: -90,

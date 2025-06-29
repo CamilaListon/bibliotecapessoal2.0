@@ -120,6 +120,8 @@ input:-webkit-autofill:active {
   }
 
   input,
+  select,
+  textarea,
   button,
   .button-primary {
     padding: 13px;

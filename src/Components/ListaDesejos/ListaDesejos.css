@@ -15,7 +15,7 @@
   color: #402718;
 }
 
-.button-primary {
+.formulario-login > .button-primary {
   margin-top: 3%;
 }
 
@@ -58,6 +58,11 @@
   padding: 0 12px 12px 20px;
   font-size: 16px;
   color: #402718;
+}
+
+.sem-livros-desejos {
+  text-align: center;
+  color: #8C5B30;
 }
 
 .paginacao-desejos {
@@ -184,6 +189,9 @@
 
   .paginacao-desejos button {
     padding: 14px 20px;
+  }
+  .titulo-desejos {
+    margin-bottom: 8%;
   }
 }
 

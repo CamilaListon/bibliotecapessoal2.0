@@ -9,14 +9,14 @@ function Header({ semBotaoVoltar = false }) {
                 {semBotaoVoltar ? (
                     <div className="espaco-vazio" />
                 ) : (
-                    <Link to="/secoes" id="botao-voltar">
+                    <Link to="/secoes" className="botao-voltar">
                         <img src="/seta.svg" alt="Ícone de voltar" />
                         <p>Voltar</p>
                     </Link>
                 )}
 
-                <Link to="/" id="botao-saida">
-                    <img src="/saida.svg" alt="Ícone de saída" />
+                <Link to="/" className="botao-saida">
+                    <img className="icon-sair" src="/saida.svg" alt="Ícone de saída" />
                 </Link>
             </div>
         </div>

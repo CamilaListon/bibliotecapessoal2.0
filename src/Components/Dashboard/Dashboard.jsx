@@ -44,17 +44,15 @@ function Dashboard() {
     .slice(0, 3)
 
   return (
-    <div className="container-max">
+    <>
       <Header />
       <div className="dashboard-container">
-
-        <h3>Estatísticas</h3>
+        <h1 className='titulo-estatisticas'>Estatísticas</h1>
 
         <div className="dashboard-grid">
-
           {/* Segmento 1 */}
           <div className="card-total-livros">
-            <div className='direcao-icon'>
+            <div className='box-informacoes'>
               <span className='circulo'>
                 <img className="icons" src="/livros-registrados.svg" alt="" />
               </span>
@@ -64,7 +62,7 @@ function Dashboard() {
               </div>
             </div>
 
-            <div className='direcao-icon' id="borda-lidos">
+            <div className='box-informacoes'>
               <span className='circulo'>
                 <img className="icons" src="/lidos.svg" alt="" />
               </span>
@@ -74,7 +72,7 @@ function Dashboard() {
               </div>
             </div>
 
-            <div className='direcao-icon' id="borda-nao-lidos">
+            <div className='box-informacoes'>
               <span className='circulo'>
                 <img className="icons" src="nao-lidos.svg" alt="" />
               </span>
@@ -84,7 +82,7 @@ function Dashboard() {
               </div>
             </div>
 
-            <div className='direcao-icon'>
+            <div className='box-informacoes'>
               <span className='circulo'>
                 <img className="icons" src="/abandonados.svg" alt="" />
               </span>
@@ -119,15 +117,7 @@ function Dashboard() {
             </div>
 
             {/* Segmento 3 */}
-            <div className="card-grafico">
-              <p>Porcentagem de tipo de leitura (Lidos)</p>
-              <GraficoLivros livrosFisicos={fisicosLidos} livrosDigitais={digitaisLidos} />
-            </div>
-          </div>
-
-          <div className="terceira-linha">
-            {/* Segmento 6 */}
-            <div className="card linha-dois valores">
+            <div className="card linha-dois">
               <span className='sem-circulo'>
                 <img src="/total-gasto.svg" alt="" />
               </span>
@@ -135,6 +125,14 @@ function Dashboard() {
                 <p className='numeros-informativos'>R${totalGasto.toFixed(2)}</p>
                 <p>Total Gasto</p>
               </div>
+            </div>
+          </div>
+
+          <div className="terceira-linha">
+            {/* Segmento 6 */}
+            <div className="card-grafico">
+              <p>Porcentagem de tipo de leitura (Lidos)</p>
+              <GraficoLivros livrosFisicos={fisicosLidos} livrosDigitais={digitaisLidos} />
             </div>
 
             {/* Segmento 5 */}
@@ -175,7 +173,7 @@ function Dashboard() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

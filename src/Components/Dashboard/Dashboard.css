@@ -1,18 +1,14 @@
 .dashboard-container {
   margin: 0 auto;
-  color: #261610;
+  color: #402718;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.container-max {
-  margin-bottom: 5%;
-}
-
-h3 {
+.titulo-estatisticas {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3%;
 }
 
 .dashboard-grid {
@@ -23,8 +19,7 @@ h3 {
 
 .card {
   background-color: #C3ACA0;
-  border: 1px solid #261610;
-  padding: 0 1.5rem;
+  border: 1px solid #402718;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -36,8 +31,8 @@ h3 {
 }
 
 .sem-circulo {
-  border-right: 2px solid #261610;
-  padding-right: 10%;
+  border-right: 1px solid #402718;
+  padding: 0 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,7 +41,6 @@ h3 {
 .separar-linha {
   padding-left: 10%;
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
 }
@@ -57,7 +51,7 @@ h3 {
   justify-content: space-between;
   flex-direction: column;
   background-color: #C3ACA0;
-  border: 1px solid #261610;
+  border: 1px solid #402718;
   padding: 1.5rem 1.5rem 0 1.5rem;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -68,23 +62,31 @@ h3 {
 
 .card-grafico {
   display: grid;
+  text-align: center;
   grid-template-columns: 2fr;
   background-color: #C3ACA0;
-  border: 1px solid #261610;
+  border: 1px solid #402718;
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.direcao-icon {
+.box-informacoes {
   display: flex;
-  gap: 5px;
-  text-indent: 5px;
-  line-height: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4%;
+  width: 100%;
+  gap: 12px;
+  border-right: 1px solid #402718;
+}
+
+.box-informacoes:nth-last-child(1) {
+  border-right: none;
 }
 
 .circulo {
-  border: 2px solid #261610;
+  border: 2px solid #402718;
   border-radius: 200px;
   display: flex;
   align-items: center;
@@ -101,7 +103,7 @@ h3 {
 .card-total-livros {
   width: 68vw;
   background-color: #C3ACA0;
-  border: 1px solid #261610;
+  border: 1px solid #402718;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -115,7 +117,6 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 16px;
   gap: 20px;
 }
 
@@ -126,37 +127,27 @@ h3 {
   gap: 20px;
 }
 
-.valores {
-  width: 16vw;
-}
-
 .numeros-informativos {
   font-size: 30px;
   font-weight: bold;
 }
 
-#borda-lidos {
-  border-left: 1px solid #402718;
-  border-right: 1px solid #402718;
-  padding: 0 10% 0 10%;
-}
-
-#borda-nao-lidos {
-  border-right: 1px solid #402718;
-  padding-right: 10%;
-}
 .subtitulo-generos {
   font-size: 16px;
 }
 
 @media (max-width: 1023px) {
+  .dashboard-container { 
+    margin: 0 20px 20% 20px;
+  }
+
   .dashboard-grid {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     gap: 15px;
   }
-
 
   .segunda-linha {
     display: flex;
@@ -178,32 +169,39 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5%;
+    padding: 0;
     width: 100%;
+    gap: 5%;
   }
 
-  .direcao-icon {
-    border-bottom: 2px solid #402718;
-    width: 100%;
-    line-height: 1.5;
-    display: flex;
-    align-items: center;
+  .box-informacoes {
+    justify-content: flex-start;
+    width: 80%;
+    padding: 20px 10%;
+    border-right: none;
+    border-bottom: 1px solid #402718;
+  }
+
+  .box-informacoes:nth-last-child(1) {
+    border-bottom: none;
   }
 
   .card {
     width: 100%;
   }
 
-  #borda-lidos,
-  #borda-nao-lidos {
-    border-left: none;
-    border-right: none;
-    padding: 0;
+  .titulo-estatisticas {
+    font-size: 24px;
+    margin: 3% 0 10% 0;
   }
 
-  h3 {
-    padding-top: 30px;
-    font-size: 24px;
+  .card-grafico {
+    gap: 20px;
+    padding: 1.5rem 18px;
+  }
+
+  .top-generos {
+    padding: 1.5rem 0 0 0;
   }
 }
 

@@ -1,14 +1,13 @@
 .secoes-container {
   width: 100vw;
-  min-height: 100vh;
   display: flex;
   box-sizing: border-box;
   flex-direction: column;
-  color: #261610;
+  color: #402718;
   padding-bottom: 5%;
 }
 
-.fulano-grid {
+.nome-grid {
   display: flex;
   align-self: center;
   justify-content: center;
@@ -20,11 +19,13 @@
   align-self: center;
   justify-content: center;
   gap: 24px;
-  max-width: 700px;
 }
 
-.fulano {
+.nome {
   display: flex;
+  color: #402718;
+  font-weight: bolder;
+  margin: 0 0 10% 0;
 }
 
 .painel {
@@ -35,10 +36,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 30px;
+  padding: 25px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 316px;
+  width: 100%;
+  max-width: 316px;
   height: 400px;
   text-align: center;
   box-sizing: border-box;
@@ -135,17 +137,11 @@
     color: #CA996D;
   }
 
-  .fulano {
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-  }
-
-  .fulano h1 {
-    font-size: 24px;
+  .nome {
+    margin-left: 20px;
   }
 
   .secoes-container {
-    padding-bottom: 25vh;
+    padding-bottom: 5vh;
   }
 }

@@ -7,12 +7,8 @@
 }
 
 .titulo-livros {
-  margin-bottom: 2%;
+  margin-bottom: 3%;
   color: #402718;
-}
-
-.button-primary {
-  margin-top: 3%;
 }
 
 .section-livros {
@@ -179,6 +175,10 @@
 }
 
 @media (max-width: 1023px) {
+  .titulo-livros {
+    margin-bottom: 10%;
+  }
+
   .filtro-btn-livros {
     font-size: 10px;
   }
@@ -190,6 +190,7 @@
   .section-livros {
     width: 86%;
     padding: 37px 16px;
+    margin-bottom: 20%;
   }
 
   .paginacao-livros {
@@ -227,10 +228,6 @@
   margin-top: 1rem;
 }
 
-.botoes-modal > .button-primary{
-  margin-top: 0;
-}
-
 .modal-confirmacao,
 .mensagem-sucesso {
   position: fixed;
@@ -251,6 +248,7 @@
   border-radius: 10px;
   max-width: 400px;
   width: 90%;
+  margin: 0 20px;
 }
 
 .mensagem-sucesso {

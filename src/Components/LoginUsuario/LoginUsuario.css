@@ -39,7 +39,7 @@
 }
 
 .titulo-login, .texto-cadastro {
-  color: #261610;
+  color: #402718;
 }
 
 .texto-cadastro {
@@ -48,7 +48,7 @@
 }
 
 .link-cadastro {
-  color: #261610;
+  color: #402718;
   cursor: pointer;
   text-decoration: underline;
   margin-left: 4px;
@@ -59,7 +59,7 @@
 }
 
 #mensagem {
-  color: #261610;
+  color: #402718;
 }
 
 .formulario-login {
@@ -75,10 +75,10 @@
 }
 
 .esqueci-senha:hover {
-  color: #261610;
+  color: #402718;
 }
 
-.button-primary {
+.formulario-login > .button-primary {
   margin-top: 8%;
 }
 
@@ -128,7 +128,8 @@
   .texto-cadastro {
     margin: 0 !important;
   }
-  .button-primary {
+
+  .formulario-login > .button-primary {
     margin-top: 5% !important;
   }
 }
