@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import TelaInicial from './Components/TelaInicial/TelaInicial'
 import CadastroUsuario from './Components/CadastroUsuario/CadastroUsuario'
-import LoginUsuario from './components/LoginUsuario/LoginUsuario'
+import LoginUsuario from './Components/LoginUsuario/LoginUsuario'
 import SuasSecoes from './Components/SuasSecoes/SuasSecoes'
 import CadastroLivro from './Components/CadastroLivro/CadastroLivro'
 import ListaLivros from './Components/ListaLivros/ListaLivros'
