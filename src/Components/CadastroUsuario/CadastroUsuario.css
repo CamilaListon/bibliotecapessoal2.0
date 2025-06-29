@@ -9,7 +9,7 @@
 .coluna-esquerda-cadastro {
   width: 50vw;
   height: 95vh;
-  background: url("principal.jpg");
+  background: url("/principal.jpg");
   background-position: center center;
   border-radius: 30px;
   margin: 1% 0 1% 2%;

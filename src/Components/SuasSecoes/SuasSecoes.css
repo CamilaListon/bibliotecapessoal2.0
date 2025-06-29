@@ -49,15 +49,15 @@
 }
 
 #image-livro {
-  background-image: url("livros.jpg");
+  background-image: url("/livros.jpg");
 }
 
 #image-lista-desejo {
-  background-image: url("lista-de-desejos.jpg");
+  background-image: url("/lista-de-desejos.jpg");
 }
 
 #image-estatistica {
-  background-image: url("estatisticas.jpg");
+  background-image: url("/estatisticas.jpg");
 }
 
 .painel::after {
