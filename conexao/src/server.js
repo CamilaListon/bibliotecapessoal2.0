@@ -5,8 +5,8 @@ const mysql = require('mysql2/promise');
 const app = express();
 const pool = mysql.createPool({
     host: 'switchyard.proxy.rlwy.net',
-    user: 'root',      // Altere para o nome do seu user no MySQL
-    password: 'SpeGdWEEAniIDWHxUuLVqnmYsodTgqew',    // Altere para a senha correta
+    user: 'root',      
+    password: 'SpeGdWEEAniIDWHxUuLVqnmYsodTgqew',    
     database: 'railway',
     waitForConnections: true,
     connectionLimit: 10,
