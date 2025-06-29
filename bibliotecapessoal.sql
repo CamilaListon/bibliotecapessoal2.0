@@ -1,0 +1,30 @@
+CREATE DATABASE biblioteca_pessoal;
+USE biblioteca_pessoal;
+
+-- Tabela: usuários
+CREATE TABLE usuario (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    cpf VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL
+    );
+
+-- Tabela: livros
+CREATE TABLE livros (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome_livro VARCHAR(200) NOT NULL,
+    autor VARCHAR(100),
+    editora VARCHAR(100),
+    valor DECIMAL(8,2),
+    isbn VARCHAR(20),
+    genero VARCHAR(50),
+    descricao TEXT,
+    tipo_leitura VARCHAR(200),
+    status ENUM('lido', 'nao_lido', 'abandonado', 'lista_desejo') DEFAULT 'nao_lido',
+    nota INT CHECK (nota BETWEEN 1 AND 5),
+    consideracoes TEXT 
+);
+
+ALTER TABLE livros ADD COLUMN id_usuario INT;
+ALTER TABLE livros ADD CONSTRAINT fk_usuario FOREIGN KEY (id_usuario) REFERENCES usuario(id);
