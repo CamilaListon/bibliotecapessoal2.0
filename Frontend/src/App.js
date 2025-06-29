@@ -1,11 +1,6 @@
 import express from 'express'
 import conexao from '../conexao/conexao.js';
 
-
-
-
-
-
 const app = express()
 
 app.use(express.json())
