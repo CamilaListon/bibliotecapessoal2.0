@@ -9,7 +9,7 @@
 .coluna-esquerda-inicial {
   width: 50vw;
   height: 95vh;
-  background: url("principal.jpg");
+  background: url("/principal.jpg");
   background-position: center center;
   border-radius: 30px;
   margin: 1% 0 1% 2%;
@@ -33,22 +33,22 @@
 }
 
 .descricao-inicial {
-	text-align: center;
+  text-align: center;
   color: #A27A6B;
-	max-width: 480px;
-	margin-bottom: 10%;
+  max-width: 480px;
+  margin-bottom: 10%;
 }
 
 .botoes {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	gap: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .link-login {
-	background-color: #402718;
-	color: #C3ACA0 !important;
+  background-color: #402718;
+  color: #C3ACA0 !important;
 }
 
 .link-login:hover {
@@ -56,9 +56,9 @@
 }
 
 .link-cad {
-	background-color: transparent;
-	border: 1px solid #402718;
-	color: #402718;
+  background-color: transparent;
+  border: 1px solid #402718;
+  color: #402718;
 }
 
 .link-cad:hover {
@@ -66,16 +66,17 @@
   color: #C3ACA0;
 }
 
-.link-login, .link-cad {
-	text-align: center;
+.link-login,
+.link-cad {
+  text-align: center;
   font-size: 16px;
   font-weight: bolder;
   cursor: pointer;
   transition: border-color 0.25s;
   padding: 20px;
-	border-radius: 10px;
-	text-decoration: none !important;
-	width: 30vw;
+  border-radius: 10px;
+  text-decoration: none !important;
+  width: 30vw;
 }
 
 @media (max-width: 1023px) {
@@ -104,14 +105,15 @@
 }
 
 @media (max-width: 767px) {
-	.descricao-inicial {
+  .descricao-inicial {
     font-size: 14px;
-		padding: 0 30px;
+    padding: 0 30px;
   }
 
-  .link-login, .link-cad  {
+  .link-login,
+  .link-cad {
     padding: 13px;
     font-size: 14px;
-		width: 50vw;
+    width: 50vw;
   }
 }
