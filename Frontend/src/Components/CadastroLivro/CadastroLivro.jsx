@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef  } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import './CadastroLivro.css';
 import { useNavigate } from 'react-router-dom';
@@ -25,6 +25,24 @@ function CadastroLivro() {
   const navigate = useNavigate();
   const sugestaoRef = useRef();
 
+  const traduzirGenero = (categoria) => {
+    const map = {
+      'Fiction': 'Ficção',
+      'Fantasy': 'Fantasia',
+      'Juvenile Fiction': 'Ficção Juvenil',
+      'Biography & Autobiography': 'Biografia',
+      'History': 'História',
+      'Science': 'Ciência',
+      'Romance': 'Romance',
+      'Mystery': 'Mistério',
+      'Horror': 'Terror',
+      'Comics & Graphic Novels': 'Quadrinhos e Novelas Gráficas',
+      'Religion': 'Religião',
+      'Drama': 'Drama'
+    };
+    return map[categoria] || categoria;
+  };
+
   const fetchBookSuggestions = async (query) => {
     if (query.length < 3) {
       setSuggestions([]);
@@ -33,8 +51,9 @@ function CadastroLivro() {
 
     try {
       const response = await axios.get(
-        `https://www.googleapis.com/books/v1/volumes?q=intitle:${query}`
+        `https://www.googleapis.com/books/v1/volumes?q=intitle:${query}&langRestrict=pt`
       );
+
       if (response.data.items) {
         const books = response.data.items.map((item) => ({
           id: item.id,
@@ -58,13 +77,17 @@ function CadastroLivro() {
       ? book.industryIdentifiers.find((id) => id.type === 'ISBN_13')?.identifier || ''
       : '';
 
+    const generoTraduzido = book.categories
+      ? book.categories.map(traduzirGenero).join(', ')
+      : '';
+
     setFormData({
       ...formData,
       nome: book.title || '',
       autor: book.authors ? book.authors.join(', ') : '',
       editora: book.publisher || '',
       paginas: book.pageCount || '',
-      genero: book.categories ? book.categories.join(', ') : '',
+      genero: generoTraduzido,
       isbn: isbnFromBook
     });
 
@@ -102,7 +125,7 @@ function CadastroLivro() {
     navigate('/listalivros');
   };
 
-   useEffect(() => {
+  useEffect(() => {
     function handleClickOutside(event) {
       if (sugestaoRef.current && !sugestaoRef.current.contains(event.target)) {
         setShowSuggestions(false);

@@ -87,6 +87,14 @@ textarea {
   border: 1px solid #402718;
 }
 
+select {
+  padding: 19px;
+}
+
+textarea {
+  height: 14.5vh;
+}
+
 input::placeholder,
 select::placeholder,
 textarea::placeholder {
@@ -126,6 +134,10 @@ input:-webkit-autofill:active {
   .button-primary {
     padding: 13px;
     font-size: 14px;
+  }
+
+  select {
+    padding: 12px;
   }
 
   label {
