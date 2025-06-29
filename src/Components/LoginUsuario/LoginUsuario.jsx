@@ -26,23 +26,6 @@ function LoginUsuario() {
     }
   }
 
-  const handleEsqueciSenha = () => {
-    if (!email) {
-      setMensagem('Digite seu e-mail para recuperar a senha.')
-      return
-    }
-
-    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || []
-    const usuarioEncontrado = usuarios.find((user) => user.email === email)
-
-    if (usuarioEncontrado) {
-      setMensagem(`Olá, ${usuarioEncontrado.nome}. Sua senha é: ${usuarioEncontrado.senha}`)
-    } else {
-      setMensagem('E-mail não encontrado.')
-    }
-  }
-
-
   return (
     <div className="container-login">
       <div className="coluna-esquerda-login"></div>
@@ -75,9 +58,6 @@ function LoginUsuario() {
               onChange={(e) => setSenha(e.target.value)}
               required
             />
-            <a className="esqueci-senha" onClick={handleEsqueciSenha}>
-              Esqueci minha senha
-            </a>
           </div>
           <button className='button-primary' type="submit">Login</button>
           <p className="texto-cadastro">

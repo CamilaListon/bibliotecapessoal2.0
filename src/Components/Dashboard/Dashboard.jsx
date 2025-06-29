@@ -17,7 +17,6 @@ function Dashboard() {
   const abandonados = livros.filter(l => l.status?.toLowerCase() === 'abandonado')
   const desejos = livros.filter(l => l.status?.toLowerCase() === 'lista de desejos')
 
-  // Somar apenas páginas dos livros lidos
   const totalPaginas = lidos.reduce((total, livro) => {
     const paginas = parseInt(livro.paginas)
     return total + (isNaN(paginas) ? 0 : paginas)

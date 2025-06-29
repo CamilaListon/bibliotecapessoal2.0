@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef  } from 'react';
 import axios from 'axios';
 import './CadastroLivro.css';
 import { useNavigate } from 'react-router-dom';
@@ -23,6 +23,7 @@ function CadastroLivro() {
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const navigate = useNavigate();
+  const sugestaoRef = useRef();
 
   const fetchBookSuggestions = async (query) => {
     if (query.length < 3) {
@@ -101,6 +102,19 @@ function CadastroLivro() {
     navigate('/listalivros');
   };
 
+   useEffect(() => {
+    function handleClickOutside(event) {
+      if (sugestaoRef.current && !sugestaoRef.current.contains(event.target)) {
+        setShowSuggestions(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
     <>
       <Header />
@@ -109,7 +123,7 @@ function CadastroLivro() {
         <form className="form-livro" onSubmit={handleSubmit}>
           <div className="colunas">
             <div className="coluna">
-              <div className="group-input relativa">
+              <div className="group-input relativa" ref={sugestaoRef}>
                 <label>Título do Livro</label>
                 <input
                   className="input-outline"
