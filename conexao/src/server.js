@@ -1,18 +1,30 @@
+require('dotenv').config();
+
 const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql2/promise');
 
 const app = express();
 const pool = mysql.createPool({
-    host: 'switchyard.proxy.rlwy.net',
-    user: 'root',      
-    password: 'SpeGdWEEAniIDWHxUuLVqnmYsodTgqew',    
+    host: 'shinkansen.proxy.rlwy.net',
+    user: 'root',
+    password: 'PuIeBxBGrsthFvEYMJVoKknkkhBFbHRi',
     database: 'railway',
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0,
-    port : 55784
+    port: 11131
 });
+
+const conexao = mysql.createConnection({
+    host: 'shinkansen.proxy.rlwy.net',
+    user: 'root',
+    password: 'PuIeBxBGrsthFvEYMJVoKknkkhBFbHRi',
+    database: 'railway',
+    port: 11131
+})
+
+conexao.conect()
 
 app.use(cors());
 app.use(express.json());
